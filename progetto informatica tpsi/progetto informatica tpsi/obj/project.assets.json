@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\tpsi-informatica\\progetto informatica tpsi\\progetto informatica tpsi\\progetto informatica tpsi.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\progetto informatica tpsi\\progetto informatica tpsi\\progetto informatica tpsi.csproj",
       "projectName": "progetto informatica tpsi",
-      "projectPath": "C:\\Users\\Asus\\Desktop\\tpsi-informatica\\progetto informatica tpsi\\progetto informatica tpsi\\progetto informatica tpsi.csproj",
+      "projectPath": "C:\\Users\\Asus\\Desktop\\progetto informatica tpsi\\progetto informatica tpsi\\progetto informatica tpsi.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\Desktop\\tpsi-informatica\\progetto informatica tpsi\\progetto informatica tpsi\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Desktop\\progetto informatica tpsi\\progetto informatica tpsi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
