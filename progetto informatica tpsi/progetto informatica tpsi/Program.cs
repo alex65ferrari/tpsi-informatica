@@ -39,14 +39,6 @@ namespace progetto_informatica_tpsi
                     }
                 }
             }
-            //cambio del contenuto di un elemento della prima colonna
-            int contenutoDaCambiare;
-            contenutoDaCambiare = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("inserire il numero di riga");
-            int numeroRiga;
-            numeroRiga = Convert.ToInt32(Console.ReadLine());
-            array[numeroRiga, 0] = contenutoDaCambiare;
-            //
             Console.ReadKey();
         }
     }
