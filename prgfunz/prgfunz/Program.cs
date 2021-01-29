@@ -15,7 +15,201 @@ namespace prgfunz
         public static void Main(string[] args)
         {
             Console.SetWindowSize(170, 50); //imposta le dimensioni della finestra del programma
-            
+            string risposta = "sì";//inizializza e assegna il valore "sì" alla variabile risposta, che servirà quando il programma chiede se continuare con le operazioni oppure no
+            do
+            {
+                string autonuoveinvendita = "0:::::::::"; //inizializza la stringa che conterrà tutti i dati del file delle auto nuove in vendita
+                string autousateinvendita = "0::::::::::::"; //inizializza la stringa che conterrà tutti i dati del file delle auto usate in vendita
+                string autonuovevendute = "0:::::::::::::"; //inizializza la stringa che conterrà tutti i dati del file delle auto nuove vendute
+                string autousatevendute = "0::::::::::::::";//inizializza la stringa che conterrà tutti i dati del file delle auto usate vendute
+                string istruzioni = ""; //inizializza la stringa che conterrà le istruzioni del programma
+                Console.Clear(); //pulisce il contenuto della console 
+                Console.WriteLine("\n -------------------------------- Concessionaria Automotors S.N.C., Via A. De Gasperi, 21, Rovigo (RO), 45100 ------------------------------------- ");
+                Console.WriteLine("\n          Benvenuto nel programma. Puoi eseguire una ricerca delle auto presenti nel parco auto aziendale, aggiungerne di nuove al database," +
+                                    "\n      spostarle da vendute a in vendita e viceversa, oppure eliminarle. Nel caso in cui avessi bisogno di aiuto inserisci la parola Aiuto. ");
+
+                try //il programma prova ad acquisire il contenuto dei file
+                {
+                    try //il programma prova ad eseguire le seguenti operazioni
+                    {
+                        //acquisisce dal file presente sul disco le auto nuove in vendita
+                        autonuoveinvendita = File.ReadAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt");
+
+                    }
+                    catch (FileNotFoundException) //se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti
+                    {
+                        Console.WriteLine("\n\nERRORE: il file che contiene auto nuove in vendita non è stato trovato. Vuoi crearne uno nuovo?");
+                        string rispostaeccezioni = Convert.ToString(Console.ReadLine());
+                        if (rispostaeccezioni == "si")
+                        {
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt", autonuoveinvendita); //crea il nuovo file che conterrà le auto nuove in vendita
+                            Console.WriteLine("\nIl file è stato creato con successo.");
+                        }
+                        else if (rispostaeccezioni == "no")
+                        {
+                            Console.WriteLine("\nChiusura del programma in corso...");
+                            Task.Delay(1800).Wait(); //attende 1,8 secondi per permettere all'utente di accorgersi della chiusura
+                            Environment.Exit(0); //esce automaticamente dal programma
+                        }
+                    }
+                    try //il programma prova ad eseguire le seguenti operazioni
+                    {
+                        //acquisisce dal file presente sul disco le auto usate in vendita
+                        autousateinvendita = File.ReadAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt");
+                    }
+                    catch (FileNotFoundException)//se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti
+                    {
+                        Console.WriteLine("\n\nERRORE: il file che contiene auto usate in vendita non è stato trovato. Vuoi crearne uno nuovo?");
+                        string rispostaeccezioni = Convert.ToString(Console.ReadLine());
+                        if (rispostaeccezioni == "si")
+                        {
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt", autousateinvendita);//crea il nuovo file che conterrà le auto usate in vendita
+                            Console.WriteLine("\nIl file è stato creato con successo.");
+                        }
+                        else if (rispostaeccezioni == "no")
+                        {
+                            Console.WriteLine("\nChiusura del programma in corso...");
+                            Task.Delay(1800).Wait(); //attende 1,8 secondi per permettere all'utente di accorgersi della chiusura
+                            Environment.Exit(0); //esce automaticamente dal programma
+                        }
+                    }
+                    try //il programma prova ad eseguire le seguenti operazioni
+                    {
+                        //acquisisce dal file presente sul disco le auto nuove già vednute
+                        autonuovevendute = File.ReadAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt");
+                    }
+                    catch (FileNotFoundException)//se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti
+                    {
+                        Console.WriteLine("\n\nERRORE: il file che contiene auto nuove vendute non è stato trovato. Vuoi crearne uno nuovo?");
+                        string rispostaeccezioni = Convert.ToString(Console.ReadLine());
+                        if (rispostaeccezioni == "si")
+                        {
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt", autonuovevendute);//crea il nuovo file che conterrà le auto nuove vendute
+                            Console.WriteLine("\nIl file è stato creato con successo.");
+                        }
+                        else if (rispostaeccezioni == "no")
+                        {
+                            Console.WriteLine("\nChiusura del programma in corso...");
+                            Task.Delay(1800).Wait(); //attende 1,8 secondi per permettere all'utente di accorgersi della chiusura
+                            Environment.Exit(0);//esce automaticamente dal programma
+                        }
+                    }
+                    try //il programma prova ad eseguire le seguenti operazioni
+                    {
+                        //acquisisce dal file presente sul disco le auto usate già vednute
+                        autousatevendute = File.ReadAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt");
+                    }
+                    catch (FileNotFoundException)//se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti
+                    {
+                        Console.WriteLine("\n\nERRORE: il file che contiene auto usate vendute non è stato trovato. Vuoi crearne uno nuovo?");
+                        string rispostaeccezioni = Convert.ToString(Console.ReadLine());
+                        if (rispostaeccezioni == "si")
+                        {
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt", autousatevendute);//crea il nuovo file che conterrà le auto usate vendute
+                            Console.WriteLine("\nIl file è stato creato con successo.");
+                        }
+                        else if (rispostaeccezioni == "no")
+                        {
+                            Console.WriteLine("Chiusura del programma in corso...");
+                            Task.Delay(1800).Wait(); //attende 1,8 secondi per permettere all'utente di accorgersi della chiusura
+                            Environment.Exit(0);//esce automaticamente dal programma
+                        }
+                    }
+
+                }
+                catch (DirectoryNotFoundException) //se si verifica questo errore, cioè la cartella dei file non è stato trovata, esegue le operazioni seguenti
+                {
+                    Console.WriteLine("\n\nERRORE: la cartella in cui si dovrebbero trovare tutte le auto non è stata trovata. Vuoi crearla?");
+                    string rispostaeccezioni = Convert.ToString(Console.ReadLine());
+                    if (rispostaeccezioni == "si")
+                    {
+
+                        Directory.CreateDirectory(@"C:\Programma gestionale concessionaria"); //crea prima la cartella
+                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt", autonuoveinvendita); //crea il nuovo file che conterrà le auto nuove in vendita
+                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt", autousateinvendita);//crea il nuovo file che conterrà le auto usate in vendita
+                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt", autonuovevendute);//crea il nuovo file che conterrà le auto nuove vendute
+                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt", autousatevendute);//crea il nuovo file che conterrà le auto usate vendute
+                        Console.WriteLine("\nLe cartelle e i file sono stati creati con successo. Ora inserisci delle automobili per sfruttare pienamente le funzionalità del programma.");
+                    }
+                    else if (rispostaeccezioni == "no")
+                    {
+                        Console.WriteLine("\nChiusura del programma in corso...");
+                        Task.Delay(1800).Wait(); //attende 1,8 secondi per permettere all'utente di accorgersi della chiusura
+                        Environment.Exit(0);//esce automaticamente dal programma
+                    }
+                }
+                catch (IOException)//se si verifica questo errore, cioè errore di lettura, esegue le operazioni seguenti
+                {
+                    Console.WriteLine("\n\nERRORE: si è verificato un errore durante la lettura dei file. Premi un tasto qualsiasi per chiudere il programma e prova ad aprilo di nuovo.");
+                    Console.ReadKey();
+                    Environment.Exit(0);//esce automaticamente dal programma una volta che viene premuto un tasto qualsiasi
+                }
+                catch (UnauthorizedAccessException)//se si verifica questo errore, cioè accesso non autorizzato, esegue le operazioni seguenti
+                {
+                    Console.WriteLine("\n\nERRORE: non hai i privilegi per accedere ai file che contengono le auto. Premi un tasto qualsiasi per chiudere il programma e " +
+                                      "prova ad aprilo di nuovo. Nel caso in cui il problema persista, contatta l'amministratore. ");
+                    Console.ReadKey();
+                    Environment.Exit(0);//esce automaticamente dal programma una volta che viene premuto un tasto qualsiasi
+                }
+                //inizializza la variabile che contiene l'elemento divisore del file
+                char carattereDivisore = ':';
+                //inserisce all'interno di un array monodimensionale tutti gli elementi del file, inserendo nelle celle ogni elemento diviso dai due punti
+                string[] elementinuoveinvendita = autonuoveinvendita.Split(carattereDivisore);
+                string[] elementiusateinvendita = autousateinvendita.Split(carattereDivisore);
+                string[] elementinuovevendute = autonuovevendute.Split(carattereDivisore);
+                string[] elementiusatevendute = autousatevendute.Split(carattereDivisore);
+                //nel file come prima cifra è presente il numero di righe che l'array multidimensionale deve avere, quindi va convertito da stringa a intero
+                int righenuoveinvendita = Convert.ToInt32(elementinuoveinvendita[0]);
+                int righeusateinvendita = Convert.ToInt32(elementiusateinvendita[0]);
+                int righenuovevendute = Convert.ToInt32(elementinuovevendute[0]);
+                int righeusatevendute = Convert.ToInt32(elementiusatevendute[0]);
+                string[,] Autonuoveinvendita = new string[righenuoveinvendita, 8]; // si inizializza l'array multidimensionale per contenere le auto nuove in vendita
+                string[,] Autousateinvendita = new string[righeusateinvendita, 10]; // si inizializza l'array multidimensionale per contenere le auto usate in vendita
+                string[,] Autonuovevendute = new string[righenuovevendute, 12]; // si inizializza l'array multidimensionale per contenere le auto vendute
+                string[,] Autousatevendute = new string[righeusatevendute, 14]; // si inizializza l'array multidimensionale per contenere le auto vendute
+                int n1 = 1; //si inizializza la variabile necessaria per l'estrazione del contenuto dell'array monodimensionale elementi
+                for (int i = 0; i < righenuoveinvendita; i++) /*inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementinuoveinvendita, 
+                                                            che contiene auto nuove in vendita*/
+
+                {
+                    for (int j = 0; j < 8; j++)
+                    {
+                        Autonuoveinvendita[i, j] = elementinuoveinvendita[n1];
+                        n1++;
+                    }
+                }
+                n1 = 1; //assegna a n1 di nuovo il valore uno per il nuovo inserimento
+                for (int i = 0; i < righeusateinvendita; i++) /*inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementiusateinvendita, 
+                                                            che contiene auto usate in vendita*/
+                {
+                    for (int j = 0; j < 10; j++)
+                    {
+                        Autousateinvendita[i, j] = elementiusateinvendita[n1];
+                        n1++;
+                    }
+                }
+                n1 = 1; //assegna a n1 di nuovo il valore uno per il nuovo inserimento
+                for (int i = 0; i < righenuovevendute; i++) /*inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementinuovevendute, 
+                                                     che contiene auto nuove vendute*/
+                {
+                    for (int j = 0; j < 12; j++)
+                    {
+                        Autonuovevendute[i, j] = elementinuovevendute[n1];
+                        n1++;
+                    }
+
+                }
+                n1 = 1; //assegna a n1 di nuovo il valore uno per il nuovo inserimento
+                for (int i = 0; i < righeusatevendute; i++) /*inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementiusatevendute, 
+                                                     che contiene auto usate vendute*/
+                {
+                    for (int j = 0; j < 14; j++)
+                    {
+                        Autousatevendute[i, j] = elementiusatevendute[n1];
+                        n1++;
+                    }
+
+                }
                 Console.WriteLine("\n\nCosa vuoi fare?");
                 //vengono inizializzate tutte le variabili e gli array che servono nella funzione main, insieme alle altre
                 string sceltainiziale = "";  //è la scelta indicata dall'utente inizialmente, per poter accedere alle varie funzioni del programma
@@ -61,7 +255,8 @@ namespace prgfunz
                     //qui viene eseguito un ciclo preventivo per individuare eventuali errori di inserimento
                     while (secondascelta != "usato" & secondascelta != "Usato " & secondascelta != "usata" & secondascelta != "Usata" &
                             secondascelta != "nuovo" & secondascelta != "Nuovo" & secondascelta != "nuova" & secondascelta != "Nuova" &
-                            secondascelta != "usate" & secondascelta != "Usate" & secondascelta != "nuove" & secondascelta != "Nuove") 
+                            secondascelta != "usate" & secondascelta != "Usate" & secondascelta != "nuove" & secondascelta != "Nuove"
+                            & secondascelta != "tutte" & secondascelta != "Tutte")  
                     {
                         Console.WriteLine("\nNon hai inserito una parola chiave accettabile. Inserisci di nuovo la tua risposta:");
                         secondascelta = Convert.ToString(Console.ReadLine());
