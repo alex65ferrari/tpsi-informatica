@@ -1,4 +1,4 @@
-#Software gestionale di informatica
+Software gestionale di informatica
 
 Un’azienda di automobili deve gestire il proprio parco auto. Vende auto nuove ed usate. 
 Vende auto di diverse marche e diversi modelli, di diversi colori e di diverse motorizzazioni (cilindrata/potenza e carburante). Si rende necessario realizzare un software che possa 
