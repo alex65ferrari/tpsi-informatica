@@ -1,1 +1,1 @@
-1:Alfa Romeo : Giulia : Gasolio : 2.143 cm3 : 136 CV/100 kW : 2020 : Bianco glaciale : ER884JE : Mario Rossi : 10/12/2020 : 43.500 euro : 43.600 euro 
+1:Alfa Romeo : Giulia : Gasolio : 2.143 cm3 : 136 CV/100 kW : 2020 : Bianco glaciale : GA001NY : Mario Rossi : 10/12/2020 : 43.500 euro : 43.600 euro 
