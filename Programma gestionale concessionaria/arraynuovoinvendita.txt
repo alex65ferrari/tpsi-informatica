@@ -9,11 +9,11 @@ BMW : Serie 2 Gran Coupé : Benzina : 1,499 cm3 : 140 CV/103 kW : 2021 : Rosso m
 BMW : Serie 2 Gran Coupé : Benzina : 1,499 cm3 : 140 CV/103 kW : 2021 : Rosso metalizzato :  32.000 euro:
 BMW : Serie 2 Gran Coupé : Gasolio : 1.995 cm3 : 190 CV/140 kW : 2020 : Blu metalizzato :  41.500 euro:
 BMW : Serie 2 Gran Tourer : Benzina : 1.499 cm3 : 109 CV/80 kW  : 2019 : Bianco pastello :  28.900 euro:
-Citroën: C1 : Benzina : 998 cm3 : 72 CV/53 kW : 2020 : Nero metalizzato : 10.750 euro:
-Citroën: C3 : Benzina : 1.199 cm3 : 83 CV/61 kW : 2020 : Marrone metalizzato : 15.600 euro:
-Citroën: C3 : Gasolio : 1.499 cm3 : 102 CV/75 kW : 2020 : Arancio pastello : 18.100 euro:
-Citroën: C4 : Elettrica : 0 cm3 : 136 CV/100 kW : 2020 : Acquamarina metalizzato : 37.650 euro:
-Citroën: C4 SpaceTourer : Gasolio : 1.499 cm3 : 131 CV/96 kW : 2021 : Amaranto metalizzato : 29.100 euro:
+Citroen: C1 : Benzina : 998 cm3 : 72 CV/53 kW : 2020 : Nero metalizzato : 10.750 euro:
+Citroen: C3 : Benzina : 1.199 cm3 : 83 CV/61 kW : 2020 : Marrone metalizzato : 15.600 euro:
+Citroen: C3 : Gasolio : 1.499 cm3 : 102 CV/75 kW : 2020 : Arancio pastello : 18.100 euro:
+Citroen: C4 : Elettrica : 0 cm3 : 136 CV/100 kW : 2020 : Acquamarina metalizzato : 37.650 euro:
+Citroen: C4 SpaceTourer : Gasolio : 1.499 cm3 : 131 CV/96 kW : 2021 : Amaranto metalizzato : 29.100 euro:
 Dacia: Duster : Benzina : 999 cm3 : 101 CV/74 kW : 2019 : Bianco pastello : 12.600 euro:
 Dacia: Duster : Gasolio : 1.461 cm3 : 116 CV/85 kW : 2020 : Bianco pastello : 19.950 euro:
 Dacia: Duster : Gasolio : 1.461 cm3 : 116 CV/85 kW : 2020 : Bianco pastello : 19.950 euro:
