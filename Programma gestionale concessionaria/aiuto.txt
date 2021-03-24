@@ -1,0 +1,27 @@
+******************************************************   ISTRUZIONI PER L'UTILIZZO DEL PROGRAMMA GESTIONALE   ******************************************************
+
+PREMESSA
+
+Grazie per aver scelto il nostro software gestionale. Se sei arrivato qui vuol dire che hai bisogno di aiuto per imparare ad utilizzare le funzioni
+del programma: vedrai che imparare ad usarlo sarà molto più semplice di quello che credi.
+
+PAGINA INIZIALE
+
+FUNZIONE DI RICERCA
+
+FUNZIONE DI INSERIMENTO
+
+FUNZIONE DI SPOSTAMENTO
+
+FUNZIONE DI ELIMINAZIONE
+
+RIAVVIO E CHIUSURA DEL PROGRAMMA
+
+GESTIONE DEGLI ERRORI
+
+ELENCO DELLE PAROLE CHIAVE
+
+CONCLUSIONI
+
+
+**** v 1.0 Programma realizzato da Diego Albertin, Francesco Di Lena, Alessio Donini e Alex Niccolò Ferrari. Classe terza F. A.S. 2020-2021 ****
