@@ -19,10 +19,10 @@ namespace prgfunz
         static int righeNuoveVendute = 0;
         static int righeUsateVendute = 0;
         //Inizializzazione di tutti i vettori necessari per contenere le auto in base al tipo.
-        static string[,] Autonuoveinvendita;
-        static string[,] Autousateinvendita;
-        static string[,] Autonuovevendute;
-        static string[,] Autousatevendute;
+        static string[,] autoNuoveInVendita;
+        static string[,] autoUsateInVendita;
+        static string[,] autoNuoveVendute;
+        static string[,] autoUsateVendute;
         //Inizializzazione e assegnazione degli elementi da visualizzare durante l'esecuzione delle diverse funzioni, sempre in base al tipo di automobile considerata.
         static string[] elementiAutoNuoveInVenditaVisualizati = new string[] { "marca", "modello", "alimentazione", "cilindrata (nel formato X.XXX cm3)", "potenza (nel formato XXX CV/XXX kW)", "anno di produzione", "colore", "prezzo (nel formato XX.XXX euro)" };
         static string[] elementiAutoUsateInVenditaVisualizati = new string[] { "marca", "modello", "alimentazione", "cilindrata (nel formato X.XXX cm3)", "potenza (nel formato XXX CV/XXX kW)", "anno di produzione", "colore", "targa (nel formato maiuscolo)", "numero di proprietari (nel formato N proprietari in lettere)", "chilometri percorsi ( nel formato XX.XXX km )", "prezzo (nel formato XX.XXX euro)" };
@@ -86,17 +86,16 @@ namespace prgfunz
                     catch (FileNotFoundException) //Se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti.
                     {
                         Console.WriteLine("\n\nERRORE: il file che contiene auto nuove in vendita non è stato trovato. Vuoi crearne uno nuovo?");
-                        string rispostaeccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
-                        if (rispostaeccezioni == "SI" || rispostaeccezioni== "SÌ")
+                        string rispostaEccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
+                        ControlloRisposta(ref rispostaEccezioni); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
+                        if (rispostaEccezioni == "SI" || rispostaEccezioni== "SÌ")
                         {
                             File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt", autonuoveinvendita); //Crea il nuovo file che conterrà le auto nuove in vendita.
                             Console.WriteLine("\nIl file è stato creato con successo.");
                         }
-                        else if (rispostaeccezioni == "NO")
+                        else if (rispostaEccezioni == "NO")
                         {
-                            Console.WriteLine("\nChiusura del programma in corso...");
-                            Task.Delay(1800).Wait(); //Attende 1,8 secondi per permettere all'utente di accorgersi della chiusura.
-                            Environment.Exit(0); //Esce automaticamente dal programma.
+                            ChiusuraProgramma(); //Richiama la funzione ChiusuraProgramma per effetture l'uscita dal programma.
                         }
                     }
                     try //Il programma prova ad eseguire le seguenti operazioni.
@@ -107,17 +106,16 @@ namespace prgfunz
                     catch (FileNotFoundException)//Se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti.
                     {
                         Console.WriteLine("\n\nERRORE: il file che contiene auto usate in vendita non è stato trovato. Vuoi crearne uno nuovo?");
-                        string rispostaeccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
-                        if (rispostaeccezioni == "SI" || rispostaeccezioni == "SÌ")
+                        string rispostaEccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
+                        ControlloRisposta(ref rispostaEccezioni); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
+                        if (rispostaEccezioni == "SI" || rispostaEccezioni == "SÌ")
                         {
                             File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt", autousateinvendita);//Crea il nuovo file che conterrà le auto usate in vendita.
                             Console.WriteLine("\nIl file è stato creato con successo.");
                         }
-                        else if (rispostaeccezioni == "NO")
+                        else if (rispostaEccezioni == "NO")
                         {
-                            Console.WriteLine("\nChiusura del programma in corso...");
-                            Task.Delay(1800).Wait(); //Attende 1,8 secondi per permettere all'utente di accorgersi della chiusura.
-                            Environment.Exit(0); //Esce automaticamente dal programma.
+                            ChiusuraProgramma(); //Richiama la funzione ChiusuraProgramma per effetture l'uscita dal programma.
                         }
                     }
                     try //Il programma prova ad eseguire le seguenti operazioni.
@@ -128,17 +126,16 @@ namespace prgfunz
                     catch (FileNotFoundException)//Se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti.
                     {
                         Console.WriteLine("\n\nERRORE: il file che contiene auto nuove vendute non è stato trovato. Vuoi crearne uno nuovo?");
-                        string rispostaeccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
-                        if (rispostaeccezioni == "SI" || rispostaeccezioni == "SÌ")
+                        string rispostaEccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
+                        ControlloRisposta(ref rispostaEccezioni); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
+                        if (rispostaEccezioni == "SI" || rispostaEccezioni == "SÌ")
                         {
                             File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt", autonuovevendute);//Crea il nuovo file che conterrà le auto nuove vendute.
                             Console.WriteLine("\nIl file è stato creato con successo.");
                         }
-                        else if (rispostaeccezioni == "NO")
+                        else if (rispostaEccezioni == "NO")
                         {
-                            Console.WriteLine("\nChiusura del programma in corso...");
-                            Task.Delay(1800).Wait(); //Attende 1,8 secondi per permettere all'utente di accorgersi della chiusura.
-                            Environment.Exit(0);//Esce automaticamente dal programma.
+                            ChiusuraProgramma(); //Richiama la funzione ChiusuraProgramma per effetture l'uscita dal programma.
                         }
                     }
                     try //Il programma prova ad eseguire le seguenti operazioni.
@@ -149,17 +146,16 @@ namespace prgfunz
                     catch (FileNotFoundException)//Se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti.
                     {
                         Console.WriteLine("\n\nERRORE: il file che contiene auto usate vendute non è stato trovato. Vuoi crearne uno nuovo?");
-                        string rispostaeccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
-                        if (rispostaeccezioni == "SI" || rispostaeccezioni == "SÌ")
+                        string rispostaEccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
+                        ControlloRisposta(ref rispostaEccezioni); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
+                        if (rispostaEccezioni == "SI" || rispostaEccezioni == "SÌ")
                         {
                             File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt", autousatevendute);//Crea il nuovo file che conterrà le auto usate vendute.
                             Console.WriteLine("\nIl file è stato creato con successo.");
                         }
-                        else if (rispostaeccezioni == "NO")
+                        else if (rispostaEccezioni == "NO")
                         {
-                            Console.WriteLine("Chiusura del programma in corso...");
-                            Task.Delay(1800).Wait(); //Attende 1,8 secondi per permettere all'utente di accorgersi della chiusura.
-                            Environment.Exit(0);//Esce automaticamente dal programma.
+                            ChiusuraProgramma(); //Richiama la funzione ChiusuraProgramma per effetture l'uscita dal programma.
                         }
                     }
 
@@ -167,8 +163,9 @@ namespace prgfunz
                 catch (DirectoryNotFoundException) //Se si verifica questo errore, cioè la cartella dei file non è stato trovata, esegue le operazioni seguenti.
                 {
                     Console.WriteLine("\n\nERRORE: la cartella in cui si dovrebbero trovare tutte le auto non è stata trovata. Vuoi crearla?");
-                    string rispostaeccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
-                    if (rispostaeccezioni == "SI" || rispostaeccezioni == "SÌ")
+                    string rispostaEccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
+                    ControlloRisposta(ref rispostaEccezioni); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
+                    if (rispostaEccezioni == "SI" || rispostaEccezioni == "SÌ")
                     {
 
                         Directory.CreateDirectory(@"C:\Programma gestionale concessionaria"); //Crea prima la cartella.
@@ -178,79 +175,77 @@ namespace prgfunz
                         File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt", autousatevendute);//Crea il nuovo file che conterrà le auto usate vendute.
                         Console.WriteLine("\nLe cartelle e i file sono stati creati con successo. Ora inserisci delle automobili per sfruttare pienamente le funzionalità del programma.");
                     }
-                    else if (rispostaeccezioni == "NO")
+                    else if (rispostaEccezioni == "NO")
                     {
-                        Console.WriteLine("\nChiusura del programma in corso...");
-                        Task.Delay(1800).Wait(); //Attende 1,8 secondi per permettere all'utente di accorgersi della chiusura.
-                        Environment.Exit(0);//Esce automaticamente dal programma.
+                        ChiusuraProgramma();
                     }
                 }
                 catch (IOException)//Se si verifica questo errore, cioè errore di lettura, esegue le operazioni seguenti.
                 {
                     Console.WriteLine("\n\nERRORE: si è verificato un errore durante la lettura dei file. Premi un tasto qualsiasi per chiudere il programma e prova ad aprilo di nuovo.");
                     Console.ReadKey();
-                    Environment.Exit(0);//Esce automaticamente dal programma una volta che viene premuto un tasto qualsiasi.
+                    ChiusuraProgramma(); //Richiama la funzione ChiusuraProgramma per effetture l'uscita dal programma.
                 }
                 catch (UnauthorizedAccessException)//Se si verifica questo errore, cioè accesso non autorizzato, esegue le operazioni seguenti.
                 {
                     Console.WriteLine("\n\nERRORE: non hai i privilegi per accedere ai file che contengono le auto. Premi un tasto qualsiasi per chiudere il programma e " +
                                       "prova ad aprilo di nuovo. Nel caso in cui il problema persista, contatta l'amministratore. ");
                     Console.ReadKey();
-                    Environment.Exit(0);//Esce automaticamente dal programma una volta che viene premuto un tasto qualsiasi.
+                    ChiusuraProgramma(); //Richiama la funzione ChiusuraProgramma per effetture l'uscita dal programma.
                 }
                 //Inserisce all'interno di un array monodimensionale tutti gli elementi del file, inserendo nelle celle ogni elemento diviso dai due punti.
-                string[] elementinuoveinvendita = autonuoveinvendita.Split(carattereDivisore);
-                string[] elementiusateinvendita = autousateinvendita.Split(carattereDivisore);
-                string[] elementinuovevendute = autonuovevendute.Split(carattereDivisore);
-                string[] elementiusatevendute = autousatevendute.Split(carattereDivisore);
+                string[] elementiNuoveInVendita = autonuoveinvendita.Split(carattereDivisore);
+                string[] elementiUsateInVendita = autousateinvendita.Split(carattereDivisore);
+                string[] elementiNuoveVendute = autonuovevendute.Split(carattereDivisore);
+                string[] elementiUsateVendute = autousatevendute.Split(carattereDivisore);
                 //Nel file come prima cifra è presente il numero di righe che l'array multidimensionale deve avere, quindi va convertito da stringa a intero.
-                righeNuoveInVendita = Convert.ToInt32(elementinuoveinvendita[0]);
-                righeUsateInVendita = Convert.ToInt32(elementiusateinvendita[0]);
-                righeNuoveVendute = Convert.ToInt32(elementinuovevendute[0]);
-                righeUsateVendute = Convert.ToInt32(elementiusatevendute[0]);
-                Autonuoveinvendita = new string[righeNuoveInVendita, 8]; // Si inizializza l'array multidimensionale per contenere le auto nuove in vendita.
-                Autousateinvendita = new string[righeUsateInVendita, 11]; // Si inizializza l'array multidimensionale per contenere le auto usate in vendita.
-                Autonuovevendute = new string[righeNuoveVendute, 12]; // Si inizializza l'array multidimensionale per contenere le auto vendute.
-                Autousatevendute = new string[righeUsateVendute, 14]; // Si inizializza l'array multidimensionale per contenere le auto vendute.
+                righeNuoveInVendita = Convert.ToInt32(elementiNuoveInVendita[0]);
+                righeUsateInVendita = Convert.ToInt32(elementiUsateInVendita[0]);
+                righeNuoveVendute = Convert.ToInt32(elementiNuoveVendute[0]);
+                righeUsateVendute = Convert.ToInt32(elementiUsateVendute[0]);
+                autoNuoveInVendita = new string[righeNuoveInVendita, 8]; // Si inizializza l'array multidimensionale per contenere le auto nuove in vendita.
+                autoUsateInVendita = new string[righeUsateInVendita, 11]; // Si inizializza l'array multidimensionale per contenere le auto usate in vendita.
+                autoNuoveVendute = new string[righeNuoveVendute, 12]; // Si inizializza l'array multidimensionale per contenere le auto vendute.
+                autoUsateVendute = new string[righeUsateVendute, 14]; // Si inizializza l'array multidimensionale per contenere le auto vendute.
                 int n1 = 1; //Si inizializza la variabile necessaria per l'estrazione del contenuto dell'array monodimensionale elementi.
-                for (int i = 0; i < righeNuoveInVendita; i++) /*Inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementinuoveinvendita, 
+                for (int i = 0; i < righeNuoveInVendita; i++) /*Inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementiNuoveInVendita, 
                                                             che contiene auto nuove in vendita.*/
 
                 {
                     for (int j = 0; j < 8; j++)
                     {
-                        Autonuoveinvendita[i, j] = elementinuoveinvendita[n1];
+                        autoNuoveInVendita[i, j] = elementiNuoveInVendita[n1];
                         n1++;
                     }
                 }
                 n1 = 1; //Assegna a n1 di nuovo il valore uno per il nuovo inserimento.
-                for (int i = 0; i < righeUsateInVendita; i++) /*Inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementiusateinvendita, 
+                for (int i = 0; i < righeUsateInVendita; i++) /*Inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementiUsateInVendita, 
                                                             che contiene auto usate in vendita.*/
                 {
                     for (int j = 0; j < 11; j++)
                     {
-                        Autousateinvendita[i, j] = elementiusateinvendita[n1];
+                        autoUsateInVendita[i, j] = elementiUsateInVendita[n1];
                         n1++;
                     }
                 }
                 n1 = 1; //Assegna a n1 di nuovo il valore uno per il nuovo inserimento.
-                for (int i = 0; i < righeNuoveVendute; i++) /*Inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementinuovevendute, 
+                for (int i = 0; i < righeNuoveVendute; i++) /*Inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementiNuoveVendute, 
                                                      che contiene auto nuove vendute.*/
                 {
                     for (int j = 0; j < 12; j++)
                     {
-                        Autonuovevendute[i, j] = elementinuovevendute[n1];
+                        autoNuoveVendute[i, j] = elementiNuoveVendute[n1];
                         n1++;
                     }
 
                 }
                 n1 = 1; //Assegna a n1 di nuovo il valore uno per il nuovo inserimento.
-                for (int i = 0; i < righeUsateVendute; i++) /*Inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementiusatevendute, 
+                for (int i = 0; i < righeUsateVendute; i++) /*Inserisce nell'array multidimensionale il contenuto dell'array monodimensionale elementiUsateVendute, 
                                                      che contiene auto usate vendute.*/
                 {
                     for (int j = 0; j < 14; j++)
                     {
-                        Autousatevendute[i, j] = elementiusatevendute[n1];
+                        autoUsateVendute[i, j] = elementiUsateVendute[n1];
                         n1++;
                     }
 
@@ -270,10 +265,10 @@ namespace prgfunz
                 {
                     Console.WriteLine("\nChe tipo di automobile vuoi ricercare, in vendita oppure già venduta?");
                     primaScelta = Convert.ToString(Console.ReadLine()).ToUpper();
-                    ControlloPrimaScelta(primaScelta);
+                    ControlloPrimaScelta(ref primaScelta);
                     Console.WriteLine("\nVuoi cercare un'auto nuova o usata?");
                     secondaScelta = Convert.ToString(Console.ReadLine()).ToUpper();
-                    ControlloSecondaScelta(secondaScelta);
+                    ControlloSecondaScelta(ref secondaScelta);
                     if (secondaScelta == "TUTTE") //Se l'utente vuole visualizzare tutte le auto, allora vengono eseguite queste operazioni.
                     {
                         //Se l'utente vuole visualizzare tutte le auto in vendita, allora vengono eseguite queste operazioni.
@@ -285,7 +280,7 @@ namespace prgfunz
                             {
                                 for (int j = 0; j < 8; j++)
                                 {
-                                    Console.Write(Autonuoveinvendita[i, j]);
+                                    Console.Write(autoNuoveInVendita[i, j]);
                                 }
                             }
                             Console.WriteLine("\n\nQueste, invece, sono tutte le auto usate in vendita:\n");
@@ -293,7 +288,7 @@ namespace prgfunz
                             {
                                 for (int j = 0; j < 11; j++)
                                 {
-                                    Console.Write(Autousateinvendita[i, j]);
+                                    Console.Write(autoUsateInVendita[i, j]);
                                 }
                             }
 
@@ -308,7 +303,7 @@ namespace prgfunz
                             {
                                 for (int j = 0; j < 12; j++)
                                 {
-                                    Console.Write(Autonuovevendute[i, j]);
+                                    Console.Write(autoNuoveVendute[i, j]);
                                 }
                             }
                             Console.WriteLine("\n\nQueste, invece, sono tutte le auto usate già vendute:\n");
@@ -316,7 +311,7 @@ namespace prgfunz
                             {
                                 for (int j = 0; j < 14; j++)
                                 {
-                                    Console.Write(Autousatevendute[i, j]);
+                                    Console.Write(autoUsateVendute[i, j]);
                                 }
                             }
                         }
@@ -337,10 +332,10 @@ namespace prgfunz
                     {
                         Console.WriteLine("\nChe tipo di automobile vuoi inserire, in vendita oppure già venduta?");
                         primaScelta = Convert.ToString(Console.ReadLine()).ToUpper();
-                        ControlloPrimaScelta(primaScelta);
+                        ControlloPrimaScelta(ref primaScelta); //Richiama la funzione ControlloPrimaScelta per eseguire un controllo preventivo in caso di errori nell'inserimento della prima scelta.
                         Console.WriteLine("\nVuoi inserire un'auto nuova o usata?");
                         secondaScelta = Convert.ToString(Console.ReadLine()).ToUpper();
-                        ControlloSecondaScelta(secondaScelta);
+                        ControlloSecondaScelta(ref secondaScelta); //Richiama la funzione ControlloSecondaScelta per eseguire un controllo preventivo in caso di errori nell'inserimento della seconda scelta.
 
                     }
                     //Se l'utente sceglie di spostare un'auto esegue le operazioni seguenti.
@@ -348,20 +343,20 @@ namespace prgfunz
                     {
                         Console.WriteLine("\nChe tipo di automobile vuoi spostare, in vendita oppure già venduta?");
                         primaScelta = Convert.ToString(Console.ReadLine()).ToUpper();
-                        ControlloPrimaScelta(primaScelta);
+                        ControlloPrimaScelta(ref primaScelta);
                         Console.WriteLine("\nVuoi spostare un'auto nuova o usata?");
                         secondaScelta = Convert.ToString(Console.ReadLine()).ToUpper();
-                        ControlloSecondaScelta(secondaScelta);
+                        ControlloSecondaScelta(ref secondaScelta);
                     }
                     //Se l'utente sceglie di eliminare un'auto esegue le operazioni seguenti.
                     else if (sceltaIniziale == "ELIMINA")
                     {
                         Console.WriteLine("\nChe tipo di automobile vuoi eliminare, in vendita oppure già venduta?");
                         primaScelta = Convert.ToString(Console.ReadLine()).ToUpper();
-                        ControlloPrimaScelta(primaScelta);
+                        ControlloPrimaScelta(ref primaScelta);
                         Console.WriteLine("\nVuoi eliminare un'auto nuova o usata?");
                         secondaScelta = Convert.ToString(Console.ReadLine()).ToUpper();
-                        ControlloSecondaScelta(secondaScelta);
+                        ControlloSecondaScelta(ref secondaScelta);
                     }
                     //Fa riferimento alla funzione sceltamatrici per svolgere le altre operazioni.
                     SceltaMatrici(primaScelta, secondaScelta);
@@ -399,7 +394,7 @@ namespace prgfunz
             } while (risposta == "SÌ" || risposta == "SI");
         }
         //Funzione che viene richiamata per eseguire controlli preventivi sulla prima scelta, per individuare eventuali errori di inserimento.
-        public static void ControlloPrimaScelta(string primaScelta)
+        public static void ControlloPrimaScelta(ref string primaScelta)
         {
             while (primaScelta != "VENDITA" & primaScelta != "VENDITE" & primaScelta != "VENDUTA" & primaScelta != "VENDUTE")
             {
@@ -408,7 +403,7 @@ namespace prgfunz
             }
         }
         //Funzione che viene richiamata per eseguire controlli preventivi sulla seconda scelta, per individuare eventuali errori di inserimento.
-        static void ControlloSecondaScelta(string secondaScelta)
+        static void ControlloSecondaScelta(ref string secondaScelta)
         {
             while (secondaScelta != "USATO" & secondaScelta != "USATA" & secondaScelta != "NUOVO" & secondaScelta != "NUOVA" &
                     secondaScelta != "USATE" & secondaScelta != "NUOVE" & secondaScelta != "TUTTE")
@@ -420,8 +415,8 @@ namespace prgfunz
         //Funzione che sceglie gli array, le stringhe e i numeri interi giusti in base al tipo di richiesta dell'utente.
         public static void SceltaMatrici(string primaScelta, string secondaScelta)
         {
-            //tutte le funzioni seguenti inseriscono le informazioni di ogni auto in un array generale, che viene usato in ogni funzione del programma
-            //primo caso: le scelte sono vendita e nuova
+            //Tutte le funzioni seguenti inseriscono le informazioni di ogni auto in un array generale, che viene usato in ogni funzione del programma.
+            //Primo caso: le scelte sono vendita e nuova.
             if (primaScelta == "VENDITA" & secondaScelta == "NUOVA")
             {
                 n = 8;
@@ -438,14 +433,14 @@ namespace prgfunz
                     {
                         for (int j = 0; j < n; j++)
                         {
-                            autoFunzione[i, j] = Autonuoveinvendita[i, j];
+                            autoFunzione[i, j] = autoNuoveInVendita[i, j];
                         }
                     }
                 }
                 indicazioneCaratteristicheAuto = "Verranno mostrate di seguito, separate da spazi, le caratteristiche di ogni auto: marca, modello," +
                                                "\nalimentazione, cilindrata, potenza, anno di produzione, colore e prezzo. ";
             }
-            //secondo caso: le scelte sono vendita e usata
+            //Secondo caso: le scelte sono vendita e usata.
             else if (primaScelta == "VENDITA" & secondaScelta == "USATA")
             {
                 n = 11;
@@ -462,14 +457,14 @@ namespace prgfunz
                     {
                         for (int j = 0; j < n; j++)
                         {
-                            autoFunzione[i, j] = Autousateinvendita[i, j];
+                            autoFunzione[i, j] = autoUsateInVendita[i, j];
                         }
                     }
                 }
                 indicazioneCaratteristicheAuto = "Verranno mostrate di seguito, separate da spazi, le caratteristiche di ogni auto: marca, modello," +
                                                "\nalimentazione, cilindrata, potenza, anno di produzione, colore, targa, numero dei proprietari, chilometri percorsi e prezzo. ";
             }
-            //terzo caso: le scelte sono venduta e nuova
+            //Terzo caso: le scelte sono venduta e nuova.
             else if (primaScelta == "VENDUTA" & secondaScelta == "NUOVA")
             {
                 n = 12;
@@ -486,7 +481,7 @@ namespace prgfunz
                     {
                         for (int j = 0; j < n; j++)
                         {
-                            autoFunzione[i, j] = Autonuovevendute[i, j];
+                            autoFunzione[i, j] = autoNuoveVendute[i, j];
                         }
                     }
                 }
@@ -494,7 +489,7 @@ namespace prgfunz
                                                "\nalimentazione, cilindrata, potenza, anno di produzione, colore, targa, acquirente, data di acquisto,  " +
                                                "\nprezzo di vendita iniziale e prezzo di vendita finale. ";
             }
-            //quarto caso: le scelte sono venduta e usata
+            //Quarto caso: le scelte sono venduta e usata.
             else if (primaScelta == "VENDUTA" & secondaScelta == "USATA") 
             {
                 n = 14;
@@ -511,7 +506,7 @@ namespace prgfunz
                     {
                         for (int j = 0; j < n; j++)
                         {
-                            autoFunzione[i, j] = Autousatevendute[i, j];
+                            autoFunzione[i, j] = autoUsateVendute[i, j];
                         }
                     }
                 }
@@ -519,25 +514,25 @@ namespace prgfunz
                                                "\nalimentazione, cilindrata, potenza, anno di produzione, colore, targa, numero dei proprietari,   " +
                                                "\nchilometri percorsi, acquirente, data di acquisto, prezzo di vendita iniziale e prezzo di vendita finale. ";
             }
-            int[] posizioniauto = new int[righe]; //viene inizializzato l'array necessario per contenere la riga del 
+            int[] posizioniAuto = new int[righe]; //Viene inizializzato l'array necessario per contenere le righe delle auto ricercate.
             int risultati = 0;
             if (verifica == true && verifica2 == true) 
             {
-                //da qui in poi prosegue facendo riferimento alla funzione indicata dall'utente
+                //Da qui in poi prosegue facendo riferimento alla funzione indicata dall'utente.
                 if (sceltaIniziale == "RICERCA" || sceltaIniziale == "ELIMINA" || sceltaIniziale == "SPOSTA" ) 
                 {
-                    //si rivolge alla funzione per eseguire la ricerca vera e propria oppure l'eliminazione 
-                    RicercaFile(sceltaIniziale, posizioniauto, risultati);
+                    //Si rivolge alla funzione per eseguire la ricerca vera e propria oppure l'eliminazione.
+                    RicercaFile(sceltaIniziale, posizioniAuto, risultati);
                 }
                 else if (sceltaIniziale == "INSERISCI") 
                 {
                     string salvataggio = "";
                     string [] nuovAutomobile = new string[n];
-                    for (int i = 0; i < n; i++) //chiede le caratteristiche delle auto da inseire
+                    for (int i = 0; i < n; i++) //Chiede le caratteristiche delle auto da inseire.
                     {
                         Console.WriteLine("\nInserisci {0} dell'auto che vuoi inserire:", elementiVisualizzati[i]);
                         nuovAutomobile[i] = Convert.ToString(Console.ReadLine());
-                        while (nuovAutomobile[i] == "") //esegue un controllo preventivo per evitare che i campi vengano lasciati vuoti
+                        while (nuovAutomobile[i] == "") //Esegue un controllo preventivo per evitare che i campi vengano lasciati vuoti.
                         {
                             Console.WriteLine("\nNon puoi lasciare vuoto un campo di inserimento. Inserisci {0} dell'auto che vuoi inserire:", elementiVisualizzati[i]);
                             nuovAutomobile[i] = Convert.ToString(Console.ReadLine()).ToUpper();
@@ -554,35 +549,31 @@ namespace prgfunz
                     Console.WriteLine("\nHai inserito tutte le caratteristiche. Ricontrolla se sono giuste:");
                     for (int i = 0; i < n; i++)
                     {
-                        Console.BackgroundColor = ConsoleColor.DarkBlue; //rende lo sfondo della riga blu, in modo che l'utente possa leggerlo meglio
-                        Console.ForegroundColor = ConsoleColor.White; //rende i caratteri bianchi, in modo che l'utente possa leggerli meglio
-                        Console.Write(nuovAutomobile[i]); //visualizza l'auto da inserire
-                        Console.ResetColor(); //riporta i colori alle condizioni standard (nero e grigio)
+                        Console.BackgroundColor = ConsoleColor.DarkBlue; 
+                        Console.ForegroundColor = ConsoleColor.White; 
+                        Console.Write(nuovAutomobile[i]); //Visualizza l'auto da inserire.
+                        Console.ResetColor(); 
                     }
                     Console.WriteLine("\n\nVuoi salvare le modifiche, oppure vuoi reinserire l'auto?");
                     salvataggio = Convert.ToString(Console.ReadLine()).ToUpper();
-                    while (salvataggio != "SI" & salvataggio != "SÌ" & salvataggio != "NO") 
-                    {
-                        Console.WriteLine("\nNon hai inserito la parola chiave giusta. Inserisci di nuovo la tua risposta:");
-                        salvataggio = Convert.ToString(Console.ReadLine()).ToUpper();
-                    }
+                    ControlloRisposta(ref salvataggio); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
                     if (salvataggio == "SI" || salvataggio == "SÌ") 
                     {
-                        //si rivolge alla funzione per eseguire l'inserimento vero e proprio
+                        //Si rivolge alla funzione per eseguire l'inserimento vero e proprio.
                         InserisciFile(primaScelta, secondaScelta, nuovAutomobile);
                     }
-                    //se la scelta è no, allora ritorna al main, il quale si rivolge alla funzione fineprogramma
+                    //Se la scelta è no, allora ritorna al main, il quale si rivolge alla funzione FineProgramma.
                 }
             }
         }
         //Funzione che permette la ricerca all'interno degli array.
-        public static void RicercaFile( string sceltaIniziale, int [] posizioniauto, int risultati)
+        public static void RicercaFile( string sceltaIniziale, int [] posizioniAuto, int risultati)
         {
-            string[] parametri = new string[14]; //inizializza l'array che conterrà i parametri indicati dall'utente
-            int n1 = 0; //inizializzata variabile necessaria per l'algoritmo di ricerca
-            if (righe != 0) //esegue il codice seguente se il file presente non è vuoto, cioè senza auto
+            string[] parametri = new string[14]; //Inizializza l'array che conterrà i parametri indicati dall'utente.
+            int n1 = 0; //Inizializza una variabile necessaria per l'algoritmo di ricerca.
+            if (righe != 0) //Esegue il codice seguente se il file presente non è vuoto, cioè senza auto.
             {
-                for (int i = 0; i < n; i++) //ciclo per l'inserimento dei parametri
+                for (int i = 0; i < n; i++) //Ciclo per l'inserimento dei parametri.
                 {
                     if (sceltaIniziale == "RICERCA")
                     {
@@ -597,7 +588,7 @@ namespace prgfunz
                         Console.WriteLine("\nInserisci {0} dell'auto che vuoi spostare:", elementiVisualizzati[i]);
                     }
                     string parametro = Convert.ToString(Console.ReadLine()).ToUpper();
-                    if (parametro == "///") //si ferma all'inserimento del parametro "///"
+                    if (parametro == "///") //Si ferma all'inserimento del parametro "///".
                     {
                         if (i == 0)
                         {
@@ -606,66 +597,64 @@ namespace prgfunz
                         break;
                     }
                     parametri[i] = parametro;
-                    if (parametro != "") //se non si salta un filtro, allora conta l'inserimento del parametro
+                    if (parametro != "") //Se non si salta un filtro, allora conta l'inserimento del parametro.
                     {
                         n1++;
                     }
 
                 }
-                string[,] autoricercate = new string[righe, n + 1]; //inizializzazione array che conterrà le auto corrispondenti alla ricerca effettuata dall'utente
-                risultati = 0; //necessario per la visualizzazione del numero di risultati trovati
+                string[,] autoRicercate = new string[righe, n + 1]; //Inizializzazione array che conterrà le auto corrispondenti alla ricerca effettuata dall'utente.
+                risultati = 0; //Necessario per la visualizzazione del numero di risultati trovati.
                 int n2 = 1;
-                for (int i = 0; i < righe; i++) //ciclo che svolge l'algoritmo di ricerca
+                for (int i = 0; i < righe; i++) //Ciclo che svolge l'algoritmo di ricerca.
                 {
                     int n3 = 0;
                     for (int j = 0; j < n; j++)
                     {
-                        if (parametri[j] != "") //se l'utente non ha saltato delle richieste, allora esegue le operazioni seguenti
+                        if (parametri[j] != "") //Se l'utente non ha saltato delle richieste, allora esegue le operazioni seguenti.
                         {
-                            CompareInfo confrontostringhe = CultureInfo.InvariantCulture.CompareInfo; //inizializza la variabile per il confronto delle stringhe, dandone le impostazioni iniziali
-                            if (confrontostringhe.Compare(autoFunzione[i, j], parametri[j], CompareOptions.IgnoreSymbols) == 0) //esegue il confronto fra le varie caratteristiche per individuare l'auto giusta in base ai filtri di ricerca
+                            CompareInfo confrontoStringhe = CultureInfo.InvariantCulture.CompareInfo; //Inizializza la variabile per il confronto delle stringhe, dandone le impostazioni iniziali.
+                            if (confrontoStringhe.Compare(autoFunzione[i, j], parametri[j], CompareOptions.IgnoreSymbols) == 0) //Esegue il confronto fra le varie caratteristiche per individuare l'auto giusta in base ai filtri di ricerca.
                             {
                                 n3++;
                                 if (n3 == n1)
                                 {
                                     risultati++;
-                                    posizioniauto[n2 - 1] = i;
+                                    posizioniAuto[n2 - 1] = i;
                                     for (int k = 0; k < n; k++)
                                     {
                                         if (k == 0)
                                         {
                                             autoFunzione[i, 0] = autoFunzione[i, 0].TrimStart('\r');
                                             autoFunzione[i, 0] = autoFunzione[i, 0].TrimStart('\n');
-                                            autoricercate[i, 0] = "\n" + n2 + ".";
+                                            autoRicercate[i, 0] = "\n" + n2 + ".";
                                             n2++;
                                         }
-                                        autoricercate[i, k + 1] = autoFunzione[i, k];
+                                        autoRicercate[i, k + 1] = autoFunzione[i, k];
                                     }
                                 }
                             }
                         }
                     }
                 }
-                //mostra i risultati della ricerca
+                //Mostra i risultati della ricerca.
                 if (risultati != 0)
                 {
                     if (risultati == 1)
                     {
-                        //alla prima riga viene dato allo sfondo il colore blu e il colore dei caratteri bianco
                         Console.BackgroundColor = ConsoleColor.DarkBlue;
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("\n\nLa ricerca ha prodotto un risultato.                                                                                                                                 \n");
-                        Console.ResetColor();//i colori vengono riportati a quelli standard (nero e grigio)
+                        Console.ResetColor();
                         Console.WriteLine(indicazioneCaratteristicheAuto + "\n");
                         
                     }
                     if (risultati > 1)
                     {
-                        //alla prima riga viene dato allo sfondo il colore blu e il colore dei caratteri bianco
                         Console.BackgroundColor = ConsoleColor.DarkBlue;
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("\n\nLa ricerca ha prodotto {0} risultati.                                                                                                                                \n", risultati);
-                        Console.ResetColor();//i colori vengono riportati a quelli standard (nero e grigio)
+                        Console.ResetColor();
                         Console.WriteLine(indicazioneCaratteristicheAuto + "\n");
                     }
                     for (int i = 0; i < righe; i++)
@@ -674,17 +663,16 @@ namespace prgfunz
                         {
                             if (j == 0)
                             {
-                                Console.ForegroundColor = ConsoleColor.DarkYellow; //i numeri diventano color giallo scuro, in modo che l'utente possa distinguerla meglio
+                                Console.ForegroundColor = ConsoleColor.DarkYellow; //I numeri diventano color giallo scuro, in modo che l'utente possa distinguerla meglio.
                             }
-                            Console.Write(autoricercate[i, j]);
-                            Console.ResetColor(); //i caratteri vengono riportati al colore standard (grigio)
+                            Console.Write(autoRicercate[i, j]);
+                            Console.ResetColor();
                         }
                     }
 
                 }
                 else if (risultati == 0)
                 {
-                    //alla prima riga viene dato allo sfondo il colore blu e il colore dei caratteri bianco
                     Console.BackgroundColor = ConsoleColor.DarkBlue;
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("\n\nLa ricerca non ha prodotto alcun risultato...                                                                                                                        ");
@@ -692,7 +680,7 @@ namespace prgfunz
                     Console.WriteLine("\nProva a ripetere la ricerca con parametri diversi.");
                 }
             }
-            //nel caso in cui il file sia vuoto, allora visualizza questo messaggio
+            //Nel caso in cui il file sia vuoto, allora visualizza questo messaggio.
             else if (righe == 0) 
             {
                 Console.WriteLine("\nERRORE: se hai recentemente creato uno o più file nuovi, non puoi eseguire le operazioni di ricerca, eliminazione e spostamento" +
@@ -700,17 +688,17 @@ namespace prgfunz
             }
             if ((sceltaIniziale == "ELIMINA" || sceltaIniziale == "SPOSTA") & (righe != 0 & risultati != 0))  
             {
-                EliminaFile(sceltaIniziale, risultati, posizioniauto);
+                EliminaFile(sceltaIniziale, risultati, posizioniAuto);
             }
         }
         //Funzione per inserire una nuova auto all'interno di un array e poi di un file.
         public static void InserisciFile(string primaScelta, string secondaScelta, string[] nuovAutomobile)
         {
             Console.WriteLine("\nSalvataggio delle modifiche dell'inserimento in corso. Non chiudere il programma...");
-            righe++; //incrementa il numero di righe di uno
-            string[] autodainserire = new string[righe]; //inizializza l'array unidimensionale che conterrà le auto che devono essere inserite nel file: è unidimensionale per effettuare un ordinamento più veloce
-            CompareInfo confrontostringhe = CultureInfo.InvariantCulture.CompareInfo; //inizializza la variabile per il confronto delle stringhe, dandone le impostazioni iniziali
-            for (int i = 0; i < righe; i++) //questo ciclo inserisce le auto già presenti all'interno dell'array coinvolto dall'utente e aggiunge alla fine l'auto nuova appena inserita 
+            righe++; //Incrementa il numero di righe di uno.
+            string[] autoDaInserire = new string[righe]; //Inizializza l'array unidimensionale che conterrà le auto che devono essere inserite nel file: è unidimensionale per effettuare un ordinamento più veloce.
+            CompareInfo confrontoStringhe = CultureInfo.InvariantCulture.CompareInfo; //Inizializza la variabile per il confronto delle stringhe, dandone le impostazioni iniziali.
+            for (int i = 0; i < righe; i++) //Questo ciclo inserisce le auto già presenti all'interno dell'array coinvolto dall'utente e aggiunge alla fine l'auto nuova appena inserita.
             {
                 for (int j = 0; j < n; j++)
                 {
@@ -720,61 +708,60 @@ namespace prgfunz
                         {
                             if (sceltaIniziale == "SPOSTA")
                             {
-                                autodainserire[i] = autodainserire[i] + capo;
+                                autoDaInserire[i] = autoDaInserire[i] + capo;
                             }
-                            autodainserire[i] = autodainserire[i] + nuovAutomobile[j] + carattereDivisore;
+                            autoDaInserire[i] = autoDaInserire[i] + nuovAutomobile[j] + carattereDivisore;
                         }
                         else
                         {
-                            autodainserire[i] = autodainserire[i] + nuovAutomobile[j] + carattereDivisore;
+                            autoDaInserire[i] = autoDaInserire[i] + nuovAutomobile[j] + carattereDivisore;
                         }
                     }
                     else if (righe - 1 != 0)
                     {
-                        autodainserire[i] = autodainserire[i] + autoFunzione[i, j] + carattereDivisore;
+                        autoDaInserire[i] = autoDaInserire[i] + autoFunzione[i, j] + carattereDivisore;
                     }
                 }
             }
-            if (righe - 1 != 0) //solamente se il file non è vuoto esegue l'ordinamento
+            if (righe - 1 != 0) //Solamente se il file non è vuoto esegue l'ordinamento.
             {
                 for (int i = righe - 1; i > 0; i--)
                 {
-                    if (confrontostringhe.Compare(autodainserire[i], autodainserire[i - 1], CompareOptions.IgnoreSymbols) <= 0) //esegue il confronto fra le auto
+                    if (confrontoStringhe.Compare(autoDaInserire[i], autoDaInserire[i - 1], CompareOptions.IgnoreSymbols) <= 0) //Esegue il confronto fra le auto.
                     {
                         if (i == 1)
                         {
-                            string marcasenzacapo = autodainserire[i].TrimStart(capo); //questa istruzione elimina il carattere capo all'inizio della stringa
-                            autodainserire[i] = marcasenzacapo + capo; //aggiunge il carattere capo a quell'auto che non lo ha e ne ha bisogno
+                            string marcasenzacapo = autoDaInserire[i].TrimStart(capo); //Questo metodo elimina il carattere capo all'inizio della stringa.
+                            autoDaInserire[i] = marcasenzacapo + capo; //Aggiunge il carattere capo a quell'auto che non lo ha e ne ha bisogno.
                         }
-                        //parte di ordinamento
+                        //Parte di ordinamento.
                         string temp = "";
-                        temp = autodainserire[i];
-                        autodainserire[i] = autodainserire[i - 1];
-                        autodainserire[i - 1] = temp;
+                        temp = autoDaInserire[i];
+                        autoDaInserire[i] = autoDaInserire[i - 1];
+                        autoDaInserire[i - 1] = temp;
 
                     }
                 }
             }
-            else if (righe - 1 == 0) //se il file è vuoto allora inserisce la macchina appena inserita, che è la prima, direttamente, senza procedere all'ordinamento
+            else if (righe - 1 == 0) //Se il file è vuoto allora inserisce la macchina appena inserita, che è la prima, direttamente, senza procedere all'ordinamento.
             {
-                string marcasenzacapo = autodainserire[0].TrimStart(capo);
-                autodainserire[0] = marcasenzacapo;
+                string marcasenzacapo = autoDaInserire[0].TrimStart(capo);
+                autoDaInserire[0] = marcasenzacapo;
             }
-            autodainserire[righe - 1] = autodainserire[righe - 1].TrimEnd(carattereDivisore); //elimina alla fine dall'ultima caratteristica dell'ultima auto dell'elenco il carattere divisore (':'), necessario per dividere le caratteristiche quando si apre il programma
-            string autodasalvare = ""; //inizializza la stringa dove inserire le auto da salvare
-            autodasalvare = autodasalvare + righe + carattereDivisore; //come prima informazione inserisce nella stringa appena creata il numero di righe, necessarie durante la lettura del file a inizio programma
-            for (int i = 0; i < righe; i++) //inserisce successivamente tutte le auto
+            autoDaInserire[righe - 1] = autoDaInserire[righe - 1].TrimEnd(carattereDivisore); //Elimina alla fine dall'ultima caratteristica dell'ultima auto dell'elenco il carattere divisore (':'), necessario per dividere le caratteristiche quando si apre il programma.
+            string autoDaSalvare = ""; //Inizializza la stringa dove inserire le auto da salvare.
+            autoDaSalvare = autoDaSalvare + righe + carattereDivisore; //Come prima informazione inserisce nella stringa appena creata il numero di righe, necessarie durante la lettura del file a inizio programma.
+            for (int i = 0; i < righe; i++) //Inserisce successivamente tutte le auto.
             {
-                autodasalvare = autodasalvare + autodainserire[i];
+                autoDaSalvare = autoDaSalvare + autoDaInserire[i];
             }
-            Salvataggio(primaScelta, secondaScelta, autodasalvare);
+            Salvataggio(primaScelta, secondaScelta, autoDaSalvare);
 
         }
         //Funzione per eliminare le auto da un array.
-        public static void EliminaFile(string sceltaIniziale, int risultati, int[] posizioniauto)
+        public static void EliminaFile(string sceltaIniziale, int risultati, int[] posizioniAuto)
         {
             string[] nuovAutomobile = new string[0];
-            //alla prima riga viene dato allo sfondo il colore blu e il colore dei caratteri bianco
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.ForegroundColor = ConsoleColor.White;
             if (sceltaIniziale == "ELIMINA" )
@@ -785,29 +772,29 @@ namespace prgfunz
             {
                 Console.WriteLine("\n\n\nInserisci il numero dell'auto che vuoi spostare:                                                                                                                  ");
             }
-            Console.ResetColor(); //lo sfondo e i caratteri vengono riportati al colore standard (nero e grigio)
-            bool verificarispostacorretta = false; //viene assegnato alla variabile booleana verificarispostacorretta il valore false
-            verificarispostacorretta = int.TryParse(Console.ReadLine(), out int risposta); /* prova ad assegnare alla varibile risposta il valore inserito dall'utente: 
-                                                                                            se ci sono errori verificarispostacorretta assume il valore false e richiede 
+            Console.ResetColor();
+            bool verificaRispostaCorretta = false; //Viene assegnato alla variabile booleana verificaRispostaCorretta il valore false.
+            verificaRispostaCorretta = int.TryParse(Console.ReadLine(), out int risposta); /* Prova ad assegnare alla varibile risposta il valore inserito dall'utente: 
+                                                                                            se ci sono errori verificaRispostaCorretta assume il valore false e richiede 
                                                                                             nuovamente l'inserimento, altrimenti assume il valore true e inserisce il valore
-                                                                                            digitato da tastiera all'interno della variabile risposta*/
+                                                                                            digitato da tastiera all'interno della variabile risposta.*/
 
-            while (risposta > risultati || risposta == 0 || verificarispostacorretta == false) /*esegue un controllo per rilevare gli errori dovuti all'inserimento di un numero maggiore
+            while (risposta > risultati || risposta == 0 || verificaRispostaCorretta == false) /*Esegue un controllo per rilevare gli errori dovuti all'inserimento di un numero maggiore
                                                                                                  rispetto a quelli forniti, uguale a zero, oppure nel caso in cui la conversione non sia
-                                                                                                 riuscita e verificarispostacorretta assume il valore false*/
+                                                                                                 riuscita e verificaRispostaCorretta assume il valore false.*/
             {
                 Console.WriteLine("\nIl parametro inserito è maggiore rispetto a quelli forniti o uguale a zero, oppure non hai inserito un numero." +
                                     "\nInserisci di nuovo la tua risposta:");
-                verificarispostacorretta = int.TryParse(Console.ReadLine(), out risposta); //prova di nuovo ad eseguire l'inserimento
+                verificaRispostaCorretta = int.TryParse(Console.ReadLine(), out risposta); //Prova di nuovo ad eseguire l'inserimento.
             }
-            risposta--; //risposta viene diminuito di uno per poter identificare nell'array la riga corretta dell'auto che deve essere eliminata
+            risposta--; //Risposta viene diminuito di uno per poter identificare nell'array la riga corretta dell'auto che deve essere eliminata.
             Console.WriteLine("\nL'auto che hai scelto è la seguente:");
-            for (int i = 0; i < n; i++) //viene mostrata di nuovo l'auto scelta dall'utente
+            for (int i = 0; i < n; i++) //Viene mostrata di nuovo l'auto scelta dall'utente.
             {
-                Console.BackgroundColor = ConsoleColor.DarkBlue; //lo sfondo diventa blu, in modo che l'utente possa distinguerla meglio
-                Console.ForegroundColor = ConsoleColor.White;//i caratteri diventano bianchi, in modo che l'utente possa distinguerla meglio
-                Console.Write(autoFunzione[posizioniauto[risposta], i]); //viene scritta sulla console, sulla stessa riga, una caratteristica alla volta
-                Console.ResetColor(); //lo sfondo e i caratteri vengono riportati al colore standard (nero e grigio)
+                Console.BackgroundColor = ConsoleColor.DarkBlue; 
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write(autoFunzione[posizioniAuto[risposta], i]); //Viene scritta sulla console, sulla stessa riga, una caratteristica alla volta.
+                Console.ResetColor(); 
             }
             if (sceltaIniziale == "ELIMINA")
             {
@@ -817,18 +804,13 @@ namespace prgfunz
             {
                 Console.WriteLine("\n\nSei sicuro di voler spostare quest'auto?");
             }
-            string risposta2 = Convert.ToString(Console.ReadLine()).ToUpper(); //viene assegnata la variabile che contiene la risposta dell'utente
-            //esegue un controllo preventivo per rilevare eventuali errori di inserimento
-            while (risposta2 != "SI" & risposta2 != "SÌ" & risposta2 != "NO") 
-            {
-                Console.WriteLine("\nNon hai inserito un valore accettabile. Inserisci di nuovo la tua risposta:");
-                risposta2 = Convert.ToString(Console.ReadLine()).ToUpper();
-            }
+            string risposta2 = Convert.ToString(Console.ReadLine()).ToUpper(); //Viene assegnata la variabile che contiene la risposta dell'utente.
+            ControlloRisposta(ref risposta2); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
             if ((risposta2 == "SI" || risposta2 == "SÌ") & sceltaIniziale == "SPOSTA" )
             {
-                SpostaFile(posizioniauto, risposta, risposta2, nuovAutomobile);
+                SpostaFile(posizioniAuto, risposta, risposta2, nuovAutomobile);
             }
-            //se la risposta è sì, allora inizia il salvataggio delle modifiche
+            //Se la risposta è sì, allora inizia il salvataggio delle modifiche.
             if ((risposta2 == "SÌ" || risposta2 == "SI") && verifica2 == true) 
             {
                 if (sceltaIniziale == "SPOSTA")
@@ -838,53 +820,53 @@ namespace prgfunz
                     SceltaMatrici(primaScelta, secondaScelta);
                 }
                 Console.WriteLine("\nSalvataggio delle modifiche dell'eliminazione in corso. Non chiudere il programma...");
-                string autodasalvare = ""; //viene inizializzata la stringa dove vengono inserite le informazioni da scrivere su file
-                for (int i = 0; i < righe; i++) //ciclo per inserire le informazioni delle auto in autodasalvare
+                string autoDaSalvare = ""; //Viene inizializzata la stringa dove vengono inserite le informazioni da scrivere su file.
+                for (int i = 0; i < righe; i++) //Ciclo per inserire le informazioni delle auto in autoDaSalvare.
                 {
-                    if ((i != posizioniauto[risposta]) || righe - 1 == 0) /*se non si fa riferimento all'auto da eliminare oppure se una volta cancellata un'auto non 
-                                                                            ne rimangono altre, esegue le seguenti operazioni*/
+                    if ((i != posizioniAuto[risposta]) || righe - 1 == 0) /*Se non si fa riferimento all'auto da eliminare oppure se una volta cancellata un'auto non 
+                                                                            ne rimangono altre, esegue le seguenti operazioni.*/
                     {
-                        if (i == 0) //se i è uguale a 0, allora inserisce subito il numero di righe
+                        if (i == 0) //Se i è uguale a 0, allora inserisce subito il numero di righe.
                         {
-                            autodasalvare = autodasalvare + (righe - 1) + carattereDivisore;
+                            autoDaSalvare = autoDaSalvare + (righe - 1) + carattereDivisore;
                         }
-                        for (int j = 0; j < n; j++) //subito dopo comincia a inserire le varie caratteristiche delle auto, colonna per colonna
+                        for (int j = 0; j < n; j++) //Subito dopo comincia a inserire le varie caratteristiche delle auto, colonna per colonna.
                         {
-                            if (righe - 1 == 0) //se una volta cancellata un'auto non ne rimangono altre, inserisce solo il carattere divisore
+                            if (righe - 1 == 0) //Se una volta cancellata un'auto non ne rimangono altre, inserisce solo il carattere divisore.
                             {
-                                if (j == 0 & autoFunzione[i, 0].Contains(autoFunzione[posizioniauto[risposta], 0]) & sceltaIniziale == "ELIMINA") 
+                                if (j == 0 & autoFunzione[i, 0].Contains(autoFunzione[posizioniAuto[risposta], 0]) & sceltaIniziale == "ELIMINA") 
                                 {
-                                    autodasalvare = autodasalvare + capo;
+                                    autoDaSalvare = autoDaSalvare + capo;
                                 }
-                                autodasalvare = autodasalvare + carattereDivisore;
+                                autoDaSalvare = autoDaSalvare + carattereDivisore;
                             }
-                            else if (i == righe - 1 & j == n - 1) //se ci si trova all'ultima riga e colonna, allora non inserisce alla fine il carattere divisore
+                            else if (i == righe - 1 & j == n - 1) //Se ci si trova all'ultima riga e colonna, allora non inserisce alla fine il carattere divisore.
                             {
-                                if (j == 0 & autoFunzione[i, 0].Contains(autoFunzione[posizioniauto[risposta], 0]) & sceltaIniziale == "ELIMINA") 
+                                if (j == 0 & autoFunzione[i, 0].Contains(autoFunzione[posizioniAuto[risposta], 0]) & sceltaIniziale == "ELIMINA") 
                                 {
-                                    autodasalvare = autodasalvare + capo;
+                                    autoDaSalvare = autoDaSalvare + capo;
                                 }
-                                autodasalvare = autodasalvare + autoFunzione[i, j];
+                                autoDaSalvare = autoDaSalvare + autoFunzione[i, j];
                             }
-                            else //in qualsiasi altro caso inserisce l'auto dall'array autoFunzione e il carattere divisore
+                            else //In qualsiasi altro caso inserisce l'auto dall'array autoFunzione e il carattere divisore.
                             {
-                                if (j == 0 & autoFunzione[i, 0].Contains(autoFunzione[posizioniauto[risposta], 0]) & sceltaIniziale == "ELIMINA")  
+                                if (j == 0 & autoFunzione[i, 0].Contains(autoFunzione[posizioniAuto[risposta], 0]) & sceltaIniziale == "ELIMINA")  
                                 {
-                                    autodasalvare = autodasalvare + capo;
+                                    autoDaSalvare = autoDaSalvare + capo;
                                 }
-                                autodasalvare = autodasalvare + autoFunzione[i, j] + carattereDivisore;
+                                autoDaSalvare = autoDaSalvare + autoFunzione[i, j] + carattereDivisore;
                             }
 
                         }
                     }
 
                 }
-                Salvataggio(primaScelta, secondaScelta, autodasalvare); // fa riferimento alla funzione salvataggio per passare al salvataggio vero e proprio
+                Salvataggio(primaScelta, secondaScelta, autoDaSalvare); // Fa riferimento alla funzione salvataggio per passare al salvataggio vero e proprio.
             }
-            //nel caso in cui la risposta sia no, allora ritorna al main, il quale fa poi riferimento alla funzione fineprogramma
+            //Nel caso in cui la risposta sia no, allora ritorna al main, il quale fa poi riferimento alla funzione FineProgramma.
         }
         //Funzione per spostare le auto da un array a un altro.
-        public static void SpostaFile(int[] posizioniauto, int risposta, string risposta2, string[] nuovAutomobile)
+        public static void SpostaFile(int[] posizioniAuto, int risposta, string risposta2, string[] nuovAutomobile)
         {
             verifica = true;
             do
@@ -1021,11 +1003,11 @@ namespace prgfunz
                     {
                         if (i < k)
                         {
-                            nuovAutomobile[i] = autoFunzione[posizioniauto[risposta], i];
+                            nuovAutomobile[i] = autoFunzione[posizioniAuto[risposta], i];
                         }
                         else if (i > (k + j))
                         {
-                            nuovAutomobile[i - j - 1] = autoFunzione[posizioniauto[risposta], i];
+                            nuovAutomobile[i - j - 1] = autoFunzione[posizioniAuto[risposta], i];
                         }
 
                     }
@@ -1037,11 +1019,11 @@ namespace prgfunz
                     {
                         if (i < k)
                         {
-                            nuovAutomobile[i] = autoFunzione[posizioniauto[risposta], i];
+                            nuovAutomobile[i] = autoFunzione[posizioniAuto[risposta], i];
                         }
                         else if (i > (k + j)) 
                         {
-                            nuovAutomobile[i] = autoFunzione[posizioniauto[risposta], i - j - l];
+                            nuovAutomobile[i] = autoFunzione[posizioniAuto[risposta], i - j - l];
                         }
                         else if (i >= k && i <= (k + j))
                         {
@@ -1064,12 +1046,7 @@ namespace prgfunz
                 }
                 Console.WriteLine("\n\nSei sicuro di voler inserire questa nuova auto? Ricordati che verrà inserita nel nuovo elenco, poi verrà eliminata dal precedente.");
                 risposta2 = Convert.ToString(Console.ReadLine()).ToUpper();
-                //Esegue un controllo preventivo per rilevare eventuali errori di inserimento.
-                while (risposta2 != "SI" & risposta2 != "SÌ" & risposta2 != "NO")
-                {
-                    Console.WriteLine("\nNon hai inserito un valore accettabile. Inserisci di nuovo la tua risposta:");
-                    risposta2 = Convert.ToString(Console.ReadLine()).ToUpper();
-                }
+                ControlloRisposta(ref risposta2); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
                 verifica = true; //Viene posta uguale a true per poter accedere, in SceltaMatrici, alla selezione dei dati da inserire all'interno dell'array autoFunzione.
                 verifica2 = false; //Viene posto uguale a false per non ripetere il riferimento alla funzione di ricerca, alla funzione di eliminazione e spostamento.
                 SceltaMatrici(primaScelta2, secondaScelta2); //Si fa riferimento di nuovo a SceltaMatrici per disporre dell'array autoFunzione che conti
@@ -1079,104 +1056,112 @@ namespace prgfunz
             }
         }
         //Funzione di salvataggio delle modifiche usata dopo le funzioni di inserimento, eliminazione e spostamento.
-        public static void Salvataggio(string primaScelta, string secondaScelta, string autodasalvare)
+        public static void Salvataggio(string primaScelta, string secondaScelta, string autoDaSalvare)
         {
-            string rispostaeccezioni = ""; //inizializza la variabile necessaria per la risposta dell'utente in caso di eccezioni
-            int n1 = 0;  //inizializza la variabile necessaria per i tentativi in caso di errore durante la scrittura
-            do //inizia il ciclo di controllo
+            string rispostaEccezioni = ""; //Inizializza la variabile necessaria per la risposta dell'utente in caso di eccezioni.
+            int n1 = 0;  //Inizializza la variabile necessaria per i tentativi in caso di errore durante la scrittura.
+            do //Inizia il ciclo di controllo.
             {
-                try //prova ad eseguire le operazioni seguenti
+                try //Prova ad eseguire le operazioni seguenti.
                 {
                     if (primaScelta == "VENDITA" || primaScelta == "VENDITE")
                     {
                         if (secondaScelta == "NUOVA" || secondaScelta == "NUOVE")
                         {
-                            //crea oppure sovrascrive il file che contiene le auto nuove in vendita
-                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt", autodasalvare);
+                            //Crea oppure sovrascrive il file che contiene le auto nuove in vendita.
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt", autoDaSalvare);
                         }
                         else if (secondaScelta == "USATA" || secondaScelta == "USATE")
                         {
-                            //crea oppure sovrascrive il file che contiene le auto usate in vendita
-                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt", autodasalvare);
+                            //Crea oppure sovrascrive il file che contiene le auto usate in vendita.
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt", autoDaSalvare);
                         }
                     }
                     else if (primaScelta == "VENDUTA" || primaScelta == "VENDUTE")
                     {
                         if (secondaScelta == "NUOVA" || secondaScelta == "NUOVE")
                         {
-                            //crea oppure sovrascrive il file che contiene le auto nuove vendute
-                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt", autodasalvare);
+                            //Crea oppure sovrascrive il file che contiene le auto nuove vendute.
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt", autoDaSalvare);
                         }
                         else if (secondaScelta == "USATA" || secondaScelta == "USATE")
                         {
-                            //crea oppure sovrascrive il file che contiene le auto usate vendute
-                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt", autodasalvare);
+                            //Crea oppure sovrascrive il file che contiene le auto usate vendute.
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt", autoDaSalvare);
                         }
                     }
                 }
-                catch (DirectoryNotFoundException) //se non trova la cartella svolge le seguenti operazioni
+                catch (DirectoryNotFoundException) //Se non trova la cartella svolge le seguenti operazioni.
                 {
                     Console.WriteLine("\nERRORE: la cartella che dovrebbe contenere i file di salvataggio non è stata trovata. Vuoi crearne una nuova?");
-                    rispostaeccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
-                    if (rispostaeccezioni == "SI" || rispostaeccezioni == "SÌ")
+                    rispostaEccezioni = Convert.ToString(Console.ReadLine()).ToUpper();
+                    ControlloRisposta(ref rispostaEccezioni); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
+                    if (rispostaEccezioni == "SI" || rispostaEccezioni == "SÌ")
                     {
-                        Directory.CreateDirectory(@"C:\Programma gestionale concessionaria"); //crea la cartella
+                        Directory.CreateDirectory(@"C:\Programma gestionale concessionaria"); //Crea la cartella.
                         Console.WriteLine("\nCartella creata con successo.");
                     }
-                    else if (rispostaeccezioni == "NO")
+                    else if (rispostaEccezioni == "NO")
                     {
-                        Console.WriteLine("Chiusura del programma in corso...");
-                        Task.Delay(1800).Wait(); //attende 1,8 secondi per permettere all'utente di accorgersi della chiusura
-                        Environment.Exit(0);//esce automaticamente dal programma
+                        ChiusuraProgramma(); //Richiama la funzione ChiusuraProgramma per effetture l'uscita dal programma.
                     }
                 }
-                catch (IOException) //se si verifica un errore nella scrittura svolge le seguenti operazioni
+                catch (IOException) //Se si verifica un errore nella scrittura svolge le seguenti operazioni.
                 {
                     Console.WriteLine("\nERRORE: si è verificato un errore durante la scrittura del file. Nuovo tentativo di scrittura...");
                     n1++;
-                    rispostaeccezioni = "si";
+                    rispostaEccezioni = "SI";
                     if (n1 == 3)
                     {
                         Console.WriteLine("\nERRORE: dopo tre tentativi di scrittura si è verificato un errore durante la scrittura del file. " +
                                           "\nProva a riavviare il programma e, se il problema persiste, riavvia il sistema operativo."
                                           + "\nPremi un tasto qualsiasi per uscire dal programma...");
                         Console.ReadKey();
-                        Environment.Exit(0);//esce automaticamente dal programma
+                        ChiusuraProgramma(); //Richiama la funzione ChiusuraProgramma per effetture l'uscita dal programma.
                     }
                 }
             }
-            //se si risolvono delle eccezioni, allora prova a eseguire di nuovo il salvataggio
-            while (rispostaeccezioni == "SI" || rispostaeccezioni == "SÌ");
-            Task.Delay(1500).Wait(); //attende 1,5 secondi
+            //Se si risolvono le eccezioni, allora prova a eseguire di nuovo il salvataggio.
+            while (rispostaEccezioni == "SI" || rispostaEccezioni == "SÌ");
+            Task.Delay(1250).Wait(); //Attende 1,25 secondi.
             Console.WriteLine("\nSalvataggio completato con successo.");
-            Task.Delay(1000).Wait(); //attende un secondo
+            Task.Delay(1000).Wait(); //Attende un secondo.
         }
-        //Funzione eseguita al termine di tutte le operazioni e richiamata dal main.
+        //Funzione eseguita al termine di tutte le operazioni e richiamata dal Main.
         static void FineProgramma() 
         {
-            Console.BackgroundColor = ConsoleColor.DarkBlue; //lo sfondo diventa blu, in modo che l'utente possa distinguerla meglio
-            Console.ForegroundColor = ConsoleColor.White;//i caratteri diventano bianchi, in modo che l'utente possa distinguerla meglio
+            Console.BackgroundColor = ConsoleColor.DarkBlue; 
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\n\n\nVuoi eseguire ulteriori operazioni all'interno del programma?                                                                                                       ");
-            Console.ResetColor(); //riporta i colori alle condizioni standard (nero e grigio)
+            Console.ResetColor(); 
             string risposta = Convert.ToString(Console.ReadLine()).ToUpper();
-            //questo ciclo while esegue un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili
-            while (risposta != "SI" & risposta != "SÌ" & risposta != "NO") 
+            ControlloRisposta(ref risposta); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
+            if (risposta == "SÌ" || risposta == "SI" ) //Se l'utente risponde sì, allora fa ritornare il programma allo stato iniziale.
+            {
+                Console.WriteLine("\nRiavvio del programma per eseguire ulteriori operazioni in corso...");
+                Task.Delay(1250).Wait();//attende 1,8 secondi per permettere all'utente di accorgersi del riavvio
+            }
+            else if (risposta == "NO") //Se l'utente dice di no, allora chiude il programma.
+            {
+                ChiusuraProgramma();
+            }
+
+        }
+        //Funzione che esegue un controllo preventivo sull'inserimento delle risposte (SÌ, oppure NO).
+        static void ControlloRisposta(ref string risposta)
+        {
+            while (risposta != "SI" & risposta != "SÌ" & risposta != "NO")
             {
                 Console.WriteLine("\n\nNon hai inserito una parola chiave accettabile. Inserisci di nuovo la tua risposta:");
                 risposta = Convert.ToString(Console.ReadLine()).ToUpper();
             }
-            if (risposta == "SÌ" || risposta == "SI" ) //se l'utente risponde sì, allora fa ritornare il programma allo stato iniziale
-            {
-                Console.WriteLine("\nRiavvio del programma per eseguire ulteriori operazioni in corso...");
-                Task.Delay(1800).Wait();//attende 1,8 secondi per permettere all'utente di accorgersi del riavvio
-            }
-            else if (risposta == "NO") //se l'utente dice di no, allora chiude il programma
-            {
-                Console.WriteLine("\nChiusura del programma in corso...");
-                Task.Delay(1800).Wait(); //attende 1,8 secondi per permettere all'utente di accorgersi della chiusura
-                Environment.Exit(0); //esce automaticamente dal programma
-            }
-
+        }
+        //Funzione che contiene le operazioni da eseguire in caso in cui si scelga di chiudere il programma.
+        static void ChiusuraProgramma()
+        {
+            Console.WriteLine("\nChiusura del programma in corso...");
+            Task.Delay(1250).Wait(); //attende 1,25 secondi per permettere all'utente di accorgersi della chiusura
+            Environment.Exit(0); //Esce automaticamente dal programma.
         }
             
     }
