@@ -269,62 +269,8 @@ namespace prgfunz
                     Console.WriteLine("\nVuoi cercare un'auto nuova o usata?");
                     secondaScelta = Convert.ToString(Console.ReadLine()).ToUpper();
                     ControlloSecondaScelta(ref secondaScelta);
-                    if (secondaScelta == "TUTTE") //Se l'utente vuole visualizzare tutte le auto, allora vengono eseguite queste operazioni.
-                    {
-                        //Se l'utente vuole visualizzare tutte le auto in vendita, allora vengono eseguite queste operazioni.
-                        if (primaScelta == "VENDITA" || primaScelta == "VENDITE")
-                        {
-                            Console.WriteLine("\nLa ricerca ha prodotto {0} risultati.", (righeNuoveInVendita + righeUsateInVendita));
-                            Console.WriteLine("\nQueste sono tutte le auto nuove in vendita:\n");
-                            for (int i = 0; i < righeNuoveInVendita; i++)
-                            {
-                                for (int j = 0; j < 8; j++)
-                                {
-                                    Console.Write(autoNuoveInVendita[i, j]);
-                                }
-                            }
-                            Console.WriteLine("\n\nQueste, invece, sono tutte le auto usate in vendita:\n");
-                            for (int i = 0; i < righeUsateInVendita; i++)
-                            {
-                                for (int j = 0; j < 11; j++)
-                                {
-                                    Console.Write(autoUsateInVendita[i, j]);
-                                }
-                            }
-
-
-                        }
-                        //Se l'utente vuole visualizzare tutte le auto vendute, allora vengono eseguite queste operazioni.
-                        else if (primaScelta == "VENDUTA" || primaScelta == "VENDUTE")
-                        {
-                            Console.WriteLine("\nLa ricerca ha prodotto {0} risultati.", (righeNuoveVendute + righeUsateVendute));
-                            Console.WriteLine("\nQueste sono tutte le auto nuove vendute:\n");
-                            for (int i = 0; i < righeNuoveVendute; i++)
-                            {
-                                for (int j = 0; j < 12; j++)
-                                {
-                                    Console.Write(autoNuoveVendute[i, j]);
-                                }
-                            }
-                            Console.WriteLine("\n\nQueste, invece, sono tutte le auto usate già vendute:\n");
-                            for (int i = 0; i < righeUsateVendute; i++)
-                            {
-                                for (int j = 0; j < 14; j++)
-                                {
-                                    Console.Write(autoUsateVendute[i, j]);
-                                }
-                            }
-                        }
-                    }
-                    //Per tutti gli altri casi fa riferimento alla funzione sceltamatrici.
-                    else if (secondaScelta == "NUOVA" || secondaScelta == "USATA" || secondaScelta == "NUOVE" || secondaScelta == "USATE"
-                            || secondaScelta == "NUOVO" || secondaScelta == "USATO")
-                    {
-                        SceltaMatrici(primaScelta, secondaScelta);
-                    }
-
+                    SceltaMatrici(primaScelta, secondaScelta);
                 }
-
                 if (sceltaIniziale == "INSERISCI" || sceltaIniziale == "SPOSTA" || sceltaIniziale == "ELIMINA")
                 {
                     //Se l'utente sceglie di inserire un'auto esegue le operazioni seguenti.
@@ -406,7 +352,7 @@ namespace prgfunz
         static void ControlloSecondaScelta(ref string secondaScelta)
         {
             while (secondaScelta != "USATO" & secondaScelta != "USATA" & secondaScelta != "NUOVO" & secondaScelta != "NUOVA" &
-                    secondaScelta != "USATE" & secondaScelta != "NUOVE" & secondaScelta != "TUTTE")
+                    secondaScelta != "USATE" & secondaScelta != "NUOVE") 
             {
                 Console.WriteLine("\nNon hai inserito una parola chiave accettabile. Inserisci di nuovo la tua risposta:");
                 secondaScelta = Convert.ToString(Console.ReadLine()).ToUpper();
@@ -567,10 +513,11 @@ namespace prgfunz
             }
         }
         //Funzione che permette la ricerca all'interno degli array.
-        public static void RicercaFile( string sceltaIniziale, int [] posizioniAuto, int risultati)
+        public static void RicercaFile(string sceltaIniziale, int[] posizioniAuto, int risultati)
         {
             string[] parametri = new string[14]; //Inizializza l'array che conterrà i parametri indicati dall'utente.
             int n1 = 0; //Inizializza una variabile necessaria per l'algoritmo di ricerca.
+            bool verifica3 = false; //Variabile booleana necessaria nel caso in cui si vogliano visualizzare tutte le auto di una categoria (vedi da riga 538). 
             if (righe != 0) //Esegue il codice seguente se il file presente non è vuoto, cioè senza auto.
             {
                 for (int i = 0; i < n; i++) //Ciclo per l'inserimento dei parametri.
@@ -579,11 +526,11 @@ namespace prgfunz
                     {
                         Console.WriteLine("\nInserisci {0} dell'auto che vuoi cercare:", elementiVisualizzati[i]);
                     }
-                    else if (sceltaIniziale == "ELIMINA") 
+                    else if (sceltaIniziale == "ELIMINA")
                     {
                         Console.WriteLine("\nInserisci {0} dell'auto che vuoi eliminare:", elementiVisualizzati[i]);
                     }
-                    else if(sceltaIniziale == "SPOSTA" )
+                    else if (sceltaIniziale == "SPOSTA")
                     {
                         Console.WriteLine("\nInserisci {0} dell'auto che vuoi spostare:", elementiVisualizzati[i]);
                     }
@@ -593,6 +540,7 @@ namespace prgfunz
                         if (i == 0)
                         {
                             n1 = n;
+                            verifica3 = true;
                         }
                         break;
                     }
@@ -611,10 +559,10 @@ namespace prgfunz
                     int n3 = 0;
                     for (int j = 0; j < n; j++)
                     {
-                        if (parametri[j] != "") //Se l'utente non ha saltato delle richieste, allora esegue le operazioni seguenti.
+                        if (parametri[j] != "" || verifica3 == true)  //Se l'utente non ha saltato delle richieste, allora esegue le operazioni seguenti.
                         {
                             CompareInfo confrontoStringhe = CultureInfo.InvariantCulture.CompareInfo; //Inizializza la variabile per il confronto delle stringhe, dandone le impostazioni iniziali.
-                            if (confrontoStringhe.Compare(autoFunzione[i, j], parametri[j], CompareOptions.IgnoreSymbols) == 0) //Esegue il confronto fra le varie caratteristiche per individuare l'auto giusta in base ai filtri di ricerca.
+                            if (confrontoStringhe.Compare(autoFunzione[i, j], parametri[j], CompareOptions.IgnoreSymbols) == 0 || verifica3 == true)  //Esegue il confronto fra le varie caratteristiche per individuare l'auto giusta in base ai filtri di ricerca.
                             {
                                 n3++;
                                 if (n3 == n1)
@@ -647,7 +595,7 @@ namespace prgfunz
                         Console.WriteLine("\n\nLa ricerca ha prodotto un risultato.                                                                                                                                 \n");
                         Console.ResetColor();
                         Console.WriteLine(indicazioneCaratteristicheAuto + "\n");
-                        
+
                     }
                     if (risultati > 1)
                     {
@@ -681,12 +629,12 @@ namespace prgfunz
                 }
             }
             //Nel caso in cui il file sia vuoto, allora visualizza questo messaggio.
-            else if (righe == 0) 
+            else if (righe == 0)
             {
                 Console.WriteLine("\nERRORE: se hai recentemente creato uno o più file nuovi, non puoi eseguire le operazioni di ricerca, eliminazione e spostamento" +
                                   "\nper questo tipo di auto, visto che non ci sono dati. Per far uso di queste funzionalità riavvia il programma e inserisci almeno una nuova automobile.");
             }
-            if ((sceltaIniziale == "ELIMINA" || sceltaIniziale == "SPOSTA") & (righe != 0 & risultati != 0))  
+            if ((sceltaIniziale == "ELIMINA" || sceltaIniziale == "SPOSTA") & (righe != 0 & risultati != 0))
             {
                 EliminaFile(sceltaIniziale, risultati, posizioniAuto);
             }

@@ -695,11 +695,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Famiglia Di Lena\\Documents\\GitHub\\tpsi-informatica\\prgfunz\\prgfunz\\prgfunz.csproj",
+      "projectUniqueName": "C:\\Users\\Famiglia Di Lena\\Documents\\GitHub\\tpsi-informatica\\Progetto di Visual Studio\\prgfunz\\prgfunz\\prgfunz.csproj",
       "projectName": "prgfunz",
-      "projectPath": "C:\\Users\\Famiglia Di Lena\\Documents\\GitHub\\tpsi-informatica\\prgfunz\\prgfunz\\prgfunz.csproj",
+      "projectPath": "C:\\Users\\Famiglia Di Lena\\Documents\\GitHub\\tpsi-informatica\\Progetto di Visual Studio\\prgfunz\\prgfunz\\prgfunz.csproj",
       "packagesPath": "C:\\Users\\Famiglia Di Lena\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Famiglia Di Lena\\Documents\\GitHub\\tpsi-informatica\\prgfunz\\prgfunz\\obj\\",
+      "outputPath": "C:\\Users\\Famiglia Di Lena\\Documents\\GitHub\\tpsi-informatica\\Progetto di Visual Studio\\prgfunz\\prgfunz\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
