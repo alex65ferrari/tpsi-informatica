@@ -34,13 +34,14 @@ eliminazione, può essere svolta solamente in caso in cui i file contengano dell
 La prima richiesta è quella se si vuole accedere alle auto in vendita o vendute: la scelta è obbligata e può avvenire inserendo 
 rispettivamente le parole chiave “VENDITA” oppure “VENDUTA”. 
 La seconda richiesta, poi, riguarda le auto nuove o usate, dove le possibilità di scelta sono tre: la parola chiave può essere “NUOVA”, 
-“USATA”, oppure “TUTTE”, cioè permette di visualizzare tutte le auto in vendita o vendute in base alla precedente scelta. Dopo queste 
-prime richieste si possono presentare due scenari: se non ci sono auto del tipo scelto allora la ricerca si blocca e dà un messaggio di errore, 
-invitandovi ad usare la funzione di inserimento di una nuova auto prima di eseguire la ricerca; se ci sono delle auto presenti nei file, 
-allora comincia a chiedere le caratteristiche delle auto, a partire dalla marca, poi tutte le altre caratteristiche, che variano in base al 
-tipo di auto che si vuole ricercare. L’inserimento di tutte le caratteristiche non è necessario: infatti, se si vuole saltare una o più 
+“USATA”. Dopo queste prime richieste si possono presentare due scenari: se non ci sono auto del tipo scelto allora la ricerca si blocca e 
+dà un messaggio di errore, invitandovi ad usare la funzione di inserimento di una nuova auto prima di eseguire la ricerca; se ci sono delle auto 
+presenti nei file, allora comincia a chiedere le caratteristiche delle auto, a partire dalla marca, poi tutte le altre caratteristiche, che variano 
+in base al tipo di auto che si vuole ricercare. L’inserimento di tutte le caratteristiche non è necessario: infatti, se si vuole saltare una o più 
 caratteristiche, senza però terminare la richiesta, basta non inserire nulla e premere invio; nel caso, invece, in cui si voglia terminare 
-la ricerca ad una certa caratteristica, si preme invio per arrivare a quella successiva e poi, in quest’ultima, si inserisce la tripla barra “///”. 
+la ricerca ad una certa caratteristica, si preme invio per arrivare a quella successiva e poi, in quest’ultima, si inserisce la tripla barra “///”;
+se si inserisce la tripla barra alla prima caratteristica (la marca) viene visualizzato l’elenco completo delle auto appartenenti alla categoria 
+scelta inizialmente.  
 Una volta terminata la richiesta di filtri per la ricerca, mostra i risultati: qui si possono presentare due casi. Il primo è quello in cui non è 
 stato trovato nulla, quindi il programma vi invita a ripetere la ricerca con parametri diversi, mentre nel secondo caso la ricerca mostra 
 dei risultati: innanzitutto mostra quanti risultati sono stati ottenuti, poi mostra quali caratteristiche, in serie, saranno visualizzate in base 
