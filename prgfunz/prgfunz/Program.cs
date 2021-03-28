@@ -56,10 +56,10 @@ namespace prgfunz
                 primaScelta = "";
                 secondaScelta = "";
                 secondaScelta2 = "";
-                string autonuoveinvendita = "0:::::::::"; //Inizializza la stringa che conterrà tutti i dati del file delle auto nuove in vendita.
-                string autousateinvendita = "0:::::::::::::"; //Inizializza la stringa che conterrà tutti i dati del file delle auto usate in vendita.
-                string autonuovevendute = "0:::::::::::::"; //Inizializza la stringa che conterrà tutti i dati del file delle auto nuove vendute.
-                string autousatevendute = "0::::::::::::::";//inizializza la stringa che conterrà tutti i dati del file delle auto usate vendute.
+                string autoNuoveInVenditaLettura = "0:::::::::"; //Inizializza la stringa che conterrà tutti i dati del file delle auto nuove in vendita.
+                string autoUsateInVenditaLettura = "0:::::::::::::"; //Inizializza la stringa che conterrà tutti i dati del file delle auto usate in vendita.
+                string autoNuoveVenduteLettura = "0:::::::::::::"; //Inizializza la stringa che conterrà tutti i dati del file delle auto nuove vendute.
+                string autoUsateVenduteLettura = "0::::::::::::::";//inizializza la stringa che conterrà tutti i dati del file delle auto usate vendute.
                 string istruzioni = ""; //Inizializza la stringa che conterrà le istruzioni del programma.
                 Console.Clear(); //Pulisce il contenuto della console. 
                 //Alla prima riga viene dato allo sfondo il colore blu e il colore dei caratteri bianco.
@@ -80,7 +80,7 @@ namespace prgfunz
                     try //Il programma prova ad eseguire le seguenti operazioni.
                     {
                         //Acquisisce dal file presente sul disco le auto nuove in vendita.
-                        autonuoveinvendita = File.ReadAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt");
+                        autoNuoveInVenditaLettura = File.ReadAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt");
 
                     }
                     catch (FileNotFoundException) //Se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti.
@@ -90,7 +90,7 @@ namespace prgfunz
                         ControlloRisposta(ref rispostaEccezioni); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
                         if (rispostaEccezioni == "SI" || rispostaEccezioni== "SÌ")
                         {
-                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt", autonuoveinvendita); //Crea il nuovo file che conterrà le auto nuove in vendita.
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt", autoNuoveInVenditaLettura); //Crea il nuovo file che conterrà le auto nuove in vendita.
                             Console.WriteLine("\nIl file è stato creato con successo.");
                         }
                         else if (rispostaEccezioni == "NO")
@@ -101,7 +101,7 @@ namespace prgfunz
                     try //Il programma prova ad eseguire le seguenti operazioni.
                     {
                         //Acquisisce dal file presente sul disco le auto usate in vendita.
-                        autousateinvendita = File.ReadAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt");
+                        autoUsateInVenditaLettura = File.ReadAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt");
                     }
                     catch (FileNotFoundException)//Se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti.
                     {
@@ -110,7 +110,7 @@ namespace prgfunz
                         ControlloRisposta(ref rispostaEccezioni); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
                         if (rispostaEccezioni == "SI" || rispostaEccezioni == "SÌ")
                         {
-                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt", autousateinvendita);//Crea il nuovo file che conterrà le auto usate in vendita.
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt", autoUsateInVenditaLettura);//Crea il nuovo file che conterrà le auto usate in vendita.
                             Console.WriteLine("\nIl file è stato creato con successo.");
                         }
                         else if (rispostaEccezioni == "NO")
@@ -121,7 +121,7 @@ namespace prgfunz
                     try //Il programma prova ad eseguire le seguenti operazioni.
                     {
                         //Acquisisce dal file presente sul disco le auto nuove già vendute.
-                        autonuovevendute = File.ReadAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt");
+                        autoNuoveVenduteLettura = File.ReadAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt");
                     }
                     catch (FileNotFoundException)//Se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti.
                     {
@@ -130,7 +130,7 @@ namespace prgfunz
                         ControlloRisposta(ref rispostaEccezioni); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
                         if (rispostaEccezioni == "SI" || rispostaEccezioni == "SÌ")
                         {
-                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt", autonuovevendute);//Crea il nuovo file che conterrà le auto nuove vendute.
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt", autoNuoveVenduteLettura);//Crea il nuovo file che conterrà le auto nuove vendute.
                             Console.WriteLine("\nIl file è stato creato con successo.");
                         }
                         else if (rispostaEccezioni == "NO")
@@ -141,7 +141,7 @@ namespace prgfunz
                     try //Il programma prova ad eseguire le seguenti operazioni.
                     {
                         //Acquisisce dal file presente sul disco le auto usate già vendute.
-                        autousatevendute = File.ReadAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt");
+                        autoUsateVenduteLettura = File.ReadAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt");
                     }
                     catch (FileNotFoundException)//Se si verifica questo errore, cioè il file non è stato trovato, esegue le operazioni seguenti.
                     {
@@ -150,7 +150,7 @@ namespace prgfunz
                         ControlloRisposta(ref rispostaEccezioni); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
                         if (rispostaEccezioni == "SI" || rispostaEccezioni == "SÌ")
                         {
-                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt", autousatevendute);//Crea il nuovo file che conterrà le auto usate vendute.
+                            File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt", autoUsateVenduteLettura);//Crea il nuovo file che conterrà le auto usate vendute.
                             Console.WriteLine("\nIl file è stato creato con successo.");
                         }
                         else if (rispostaEccezioni == "NO")
@@ -169,10 +169,10 @@ namespace prgfunz
                     {
 
                         Directory.CreateDirectory(@"C:\Programma gestionale concessionaria"); //Crea prima la cartella.
-                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt", autonuoveinvendita); //Crea il nuovo file che conterrà le auto nuove in vendita.
-                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt", autousateinvendita);//Crea il nuovo file che conterrà le auto usate in vendita
-                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt", autonuovevendute);//Crea il nuovo file che conterrà le auto nuove vendute.
-                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt", autousatevendute);//Crea il nuovo file che conterrà le auto usate vendute.
+                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovoinvendita.txt", autoNuoveInVenditaLettura); //Crea il nuovo file che conterrà le auto nuove in vendita.
+                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatoinvendita.txt", autoUsateInVenditaLettura);//Crea il nuovo file che conterrà le auto usate in vendita
+                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arraynuovovenduto.txt", autoNuoveVenduteLettura);//Crea il nuovo file che conterrà le auto nuove vendute.
+                        File.WriteAllText(@"C:\Programma gestionale concessionaria\arrayusatovenduto.txt", autoUsateVenduteLettura);//Crea il nuovo file che conterrà le auto usate vendute.
                         Console.WriteLine("\nLe cartelle e i file sono stati creati con successo. Ora inserisci delle automobili per sfruttare pienamente le funzionalità del programma.");
                     }
                     else if (rispostaEccezioni == "NO")
@@ -194,10 +194,10 @@ namespace prgfunz
                     ChiusuraProgramma(); //Richiama la funzione ChiusuraProgramma per effetture l'uscita dal programma.
                 }
                 //Inserisce all'interno di un array monodimensionale tutti gli elementi del file, inserendo nelle celle ogni elemento diviso dai due punti.
-                string[] elementiNuoveInVendita = autonuoveinvendita.Split(carattereDivisore);
-                string[] elementiUsateInVendita = autousateinvendita.Split(carattereDivisore);
-                string[] elementiNuoveVendute = autonuovevendute.Split(carattereDivisore);
-                string[] elementiUsateVendute = autousatevendute.Split(carattereDivisore);
+                string[] elementiNuoveInVendita = autoNuoveInVenditaLettura.Split(carattereDivisore);
+                string[] elementiUsateInVendita = autoUsateInVenditaLettura.Split(carattereDivisore);
+                string[] elementiNuoveVendute = autoNuoveVenduteLettura.Split(carattereDivisore);
+                string[] elementiUsateVendute = autoUsateVenduteLettura.Split(carattereDivisore);
                 //Nel file come prima cifra è presente il numero di righe che l'array multidimensionale deve avere, quindi va convertito da stringa a intero.
                 righeNuoveInVendita = Convert.ToInt32(elementiNuoveInVendita[0]);
                 righeUsateInVendita = Convert.ToInt32(elementiUsateInVendita[0]);
