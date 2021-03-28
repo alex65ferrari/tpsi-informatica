@@ -366,7 +366,7 @@ namespace prgfunz
                     //Fa riferimento alla funzione sceltamatrici per svolgere le altre operazioni.
                     SceltaMatrici(primaScelta, secondaScelta);
                 }
-                //Se l'utente chiede di visualizzare le istruzioni del programma, esegue le seguenti operazioni. **da completare
+                //Se l'utente chiede di visualizzare le istruzioni del programma, esegue le seguenti operazioni.
                 else if (sceltaIniziale == "AIUTO" || sceltaIniziale == "HELP" || sceltaIniziale == "?")
                 {
                     try //Il programma prova ad eseguire le seguenti operazioni.
@@ -540,7 +540,7 @@ namespace prgfunz
                         while (nuovAutomobile[i] == "") //esegue un controllo preventivo per evitare che i campi vengano lasciati vuoti
                         {
                             Console.WriteLine("\nNon puoi lasciare vuoto un campo di inserimento. Inserisci {0} dell'auto che vuoi inserire:", elementiVisualizzati[i]);
-                            nuovAutomobile[i] = Convert.ToString(Console.ReadLine());
+                            nuovAutomobile[i] = Convert.ToString(Console.ReadLine()).ToUpper();
                         }
                         if (i == 0)
                         {
@@ -596,7 +596,7 @@ namespace prgfunz
                     {
                         Console.WriteLine("\nInserisci {0} dell'auto che vuoi spostare:", elementiVisualizzati[i]);
                     }
-                    string parametro = Convert.ToString(Console.ReadLine());
+                    string parametro = Convert.ToString(Console.ReadLine()).ToUpper();
                     if (parametro == "///") //si ferma all'inserimento del parametro "///"
                     {
                         if (i == 0)
@@ -604,10 +604,6 @@ namespace prgfunz
                             n1 = n;
                         }
                         break;
-                    }
-                    else if (parametro == "ESCI")
-                    {
-                        FineProgramma();
                     }
                     parametri[i] = parametro;
                     if (parametro != "") //se non si salta un filtro, allora conta l'inserimento del parametro
