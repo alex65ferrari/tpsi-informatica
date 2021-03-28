@@ -133,6 +133,8 @@ NUOVA: utilizzabile per accedere alle auto nuove nella funzione di ricerca, inse
 di spostamento.
 USATA: utilizzabile per accedere alle auto usate nella funzione di ricerca, inserimento, eliminazione e in quella 
 di spostamento.
+SÌ/SI: sono utilizzati per rispondere a diversi tipi di richieste, come, per esempio, se chiudere o riavviare il programma.
+NO: utilizzato per rispondere a diversi tipi di richieste, come, per esempio, se chiudere o riavviare il programma.
 Numeri 1,2,3,4,… : numeri da inserire nella funzione di eliminazione e spostamento, che variano in base alle auto 
 presenti nei file selezionati.
 Caratteristiche delle auto:  sono le diverse caratteristiche che riguardano un’auto e possono essere inserite nelle 
