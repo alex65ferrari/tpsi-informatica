@@ -1,2 +1,2 @@
-2:Citroen: Xsara Picasso : Gasolio : 1.999 cm3 : 90 CV/66 kW : 2002 : Grigio metalizzato : Due proprietari : 200.000 km : CB916FK : Elena Rizzato : 10/01/2015 : 1.500 euro : 1.500 euro :
-Peugeot: 206 : Benzina : 1.124 cm3 : 60 CV/44 kW : 2010 : Azzuro metalizzato : Unico proprietario : 80.000 km : BK554JE : Giulio Fernando : 20/5/2019 : 2.000 euro : 1.800 euro 
+2:Citroen: Xsara Picasso : Gasolio : 1.999 cm3 : 90 CV/66 kW : 2002 : Grigio metallizzato : Due proprietari : 200.000 km : CB916FK : Elena Rizzato : 10/01/2015 : 1.500 euro : 1.500 euro :
+Peugeot: 206 : Benzina : 1.124 cm3 : 60 CV/44 kW : 2010 : Azzurro metallizzato : Unico proprietario : 80.000 km : BK554JE : Giulio Fernando : 20/5/2019 : 2.000 euro : 1.800 euro 

@@ -1,23 +1,23 @@
-23:Alfa Romeo: 159 : Benzina : 2.000 cm3 : 200 CV/125 kW : 2012 : Rosso metalizzato : Unico proprietario : 80.000 km : EG423VF : 5.000 euro :
-Alfa Romeo: MiTo : Benzina : 1.368 cm3 : 79 CV/58 kW : 2008 : Blu metalizzato : Unico proprietario : 96.000 km : DC964SC : 1.300 euro :
-Alfa Romeo: MiTo : GPL : 1.368 cm3 : 120 CV/88 kW : 2010 : Blu metalizzato : Tre proprietari : 100.230 km : DV027BE : 2.000 euro :
+23:Alfa Romeo: 159 : Benzina : 2.000 cm3 : 200 CV/125 kW : 2012 : Rosso metallizzato : Unico proprietario : 80.000 km : EG423VF : 5.000 euro :
+Alfa Romeo: MiTo : Benzina : 1.368 cm3 : 79 CV/58 kW : 2008 : Blu metallizzato : Unico proprietario : 96.000 km : DC964SC : 1.300 euro :
+Alfa Romeo: MiTo : GPL : 1.368 cm3 : 120 CV/88 kW : 2010 : Blu metallizzato : Tre proprietari : 100.230 km : DV027BE : 2.000 euro :
 Citroen: C3 : Benzina : 1.199 cm3 : 68 CV/50 kW : 2016 : Beige pastello : Due proprietari : 56.000 km : FA963CB : 7.400 euro :
-Citroen: Xsara Picasso : Gasolio : 1.997 cm3 : 90 CV/67 kW : 2006 : Verde metalizzato : Tre proprietari : 150.000 km : DA456EJ : 1.000 euro :
+Citroen: Xsara Picasso : Gasolio : 1.997 cm3 : 90 CV/67 kW : 2006 : Verde metallizzato : Tre proprietari : 150.000 km : DA456EJ : 1.000 euro :
 Fiat: 500 : Gasolio : 1.248 cm3 : 95 CV/70 kW : 2018 : Rosa pastello : Unico proprietario : 60.320 km : FR875BQ : 9.500 euro :
-Fiat: Bravo : Gasolio : 1.598 cm3 : 105 CV/77 kW : 2010 : Marrone metalizzato : Due proprietari : 160.000 km : DV999CV : 3.100 euro :
+Fiat: Bravo : Gasolio : 1.598 cm3 : 105 CV/77 kW : 2010 : Marrone metallizzato : Due proprietari : 160.000 km : DV999CV : 3.100 euro :
 Fiat: Grande Punto : Metano : 1.368 cm3 : 78 CV/57 kW : 2009 : Nero pastello : Unico proprietario : 175.200 km : DO109MS : 5.000 euro :
-Fiat: Multipla : Metano : 1.596 cm3 : 103 CV/76 kW : 2010 : Azzurro metalizzato : Unico proprietario : 195.000 km : DU789HJ : 2.000 euro :
+Fiat: Multipla : Metano : 1.596 cm3 : 103 CV/76 kW : 2010 : Azzurro metallizzato : Unico proprietario : 195.000 km : DU789HJ : 2.000 euro :
 Fiat: Panda : GPL : 1.242 cm3 : 69 CV/51 kW : 2014 : Arancio pastello : Unico proprietario : 75.600 km : EZ643VP : 6.660 euro :
-Fiat: Punto Classic : Benzina : 1.242 cm3 : 60 CV/44 kW : 2006 : Blu metalizzato : Tre proprietari : 200.050 km : DA001LM : 990 euro :
-Ford: Fiesta : Benzina : 1.596 cm3 : 134 CV/98 kW : 2011 : Blu metalizzato : Unico proprietario : 110.000 km : EF423VF : 5.250 euro :
+Fiat: Punto Classic : Benzina : 1.242 cm3 : 60 CV/44 kW : 2006 : Blu metallizzato : Tre proprietari : 200.050 km : DA001LM : 990 euro :
+Ford: Fiesta : Benzina : 1.596 cm3 : 134 CV/98 kW : 2011 : Blu metallizzato : Unico proprietario : 110.000 km : EF423VF : 5.250 euro :
 Ford: Ka : Gasolio : 1.248 cm3 : 75 CV/55 kW : 2014 : Verde oliva pastello : Due proprietari : 80.000 km : EZ599XW : 7.500 euro :
-Lancia: Delta : Benzina : 1.368 cm3 : 120 CV/88 kW : 2012 : Nero metalizzato : Unico proprietario : 120.000 km : EG741GW : 3.500 euro :
-Lancia: Musa : GPL : 1.368 cm3 : 78 CV/57 kW : 2013 : Beige metalizzato : Tre proprietari : 100.260 km : ER178VE : 6.000 euro :
+Lancia: Delta : Benzina : 1.368 cm3 : 120 CV/88 kW : 2012 : Nero metallizzato : Unico proprietario : 120.000 km : EG741GW : 3.500 euro :
+Lancia: Musa : GPL : 1.368 cm3 : 78 CV/57 kW : 2013 : Beige metallizzato : Tre proprietari : 100.260 km : ER178VE : 6.000 euro :
 Lancia: Ypsilon : Metano : 875 cm3 : 80 CV/59 kW : 2015 : Crema pastello : Unico proprietario : 75.630 km : EZ999ZZ : 6.500 euro :
-Opel: Corsa : Gasolio : 1.248 cm3 : 95 CV/70 kW : 2016 : Azzurro metalizzato : Due proprietari : 95.000 km : FA423JZ : 7.100 euro :
-Opel: Mokka X : GPL : 1.364 cm3 : 140 CV/103 kW : 2019 : Arancio metalizzato : Unico proprietario : 60.550 km : FR537KL : 11.200 euro :
-Peugeot: 207 : Benzina : 1.397 cm3 : 95 CV/70 kW : 2012 : Bianco metalizzato : Unico proprietario : 125.630 km : EG834VO : 1.800 euro :
-Renault: Clio : GPL : 1.149 cm3 : 75 CV/55 kW : 2012 : Verde metalizzato : Tre proprietari : 160.000 km : EF000BN : 2.520 euro :
-Renault: Modus : Gasolio : 1.461 cm3 : 82 CV/60 kW : 2010 : Rosa perla metalizzato : Quattro proprietari : 185.000 km : ED997DH : 2.990 euro :
-Volkswagen: Golf Plus : GPL : 1.595 cm3 : 102 CV/75 kW : 2011 : Grigio metalizzato : Due proprietari : 156.000 km : EG646EG : 5.600 euro :
-Volkswagen: Maggiolino : Benzina : 1.984 cm3 : 220 CV/161 kW : 2017 : Nero pastello : Unico proprietario : 75.600 km : FP439GY : 14.900 euro 
+Opel: Corsa : Gasolio : 1.248 cm3 : 95 CV/70 kW : 2016 : Azzurro metallizzato : Due proprietari : 95.000 km : FA423JZ : 7.100 euro :
+Opel: Mokka X : GPL : 1.364 cm3 : 140 CV/103 kW : 2019 : Arancio metallizzato : Unico proprietario : 60.550 km : FR537KL : 11.200 euro :
+Peugeot: 207 : Benzina : 1.397 cm3 : 95 CV/70 kW : 2012 : Bianco metallizzato : Unico proprietario : 125.630 km : EG834VO : 1.800 euro :
+Renault: Clio : GPL : 1.149 cm3 : 75 CV/55 kW : 2012 : Verde metallizzato : Tre proprietari : 160.000 km : EF000BN : 2.520 euro :
+Renault: Modus : Gasolio : 1.461 cm3 : 82 CV/60 kW : 2010 : Rosa perla metallizzato : Quattro proprietari : 185.000 km : ED997DH : 2.990 euro :
+Volkswagen: Golf Plus : GPL : 1.595 cm3 : 102 CV/75 kW : 2011 : Grigio metallizzato : Due proprietari : 156.000 km : EG646EG : 5.600 euro :
+Volkswagen: Maggiolino : Benzina : 1.984 cm3 : 220 CV/161 kW : 2017 : Nero pastello : Unico proprietario : 75.600 km : FP439GY : 14.900 euro
