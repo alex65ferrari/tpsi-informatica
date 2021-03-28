@@ -1,73 +1,73 @@
-73:Alfa Romeo: Giulia : Benzina : 1.995 cm3 : 200 CV/147 kW : 2020 : Blu metallizzato : 47.000 euro:
-Alfa Romeo : Giulia : Gasolio : 2.143 cm3 : 136 CV/100 kW : 2021 : Bianco glaciale : 43.500 euro:
-Alfa Romeo : Giulietta : Gasolio: 1.598 cm3 : 120 CV/88 kW : 2020 : Rosso metallizzato :  27.800 euro:
-Alfa Romeo : Stelvio : Benzina : 1.995 cm3 : 201 CV/148 kW : 2020 : Grigio fumo :  56.000 euro:
-Audi : A1 Citycarver : Benzina : 999 cm3 : 116 CV/85 kW : 2021 : Blu metallizzato :  29.000 euro:
-Audi : A1 Sportback : Benzina : 999 cm3 : 116 CV/85 kW : 2019 : Bianco metallizzato :  22.950 euro:
-BMW : Serie 1 : Gasolio : 1.496 cm3 : 116 CV/85 kW : 2020 : Blu oltremare :  33.500 euro:
-BMW : Serie 2 Gran Coupé : Benzina : 1,499 cm3 : 140 CV/103 kW : 2021 : Rosso metallizzato :  32.000 euro:
-BMW : Serie 2 Gran Coupé : Benzina : 1,499 cm3 : 140 CV/103 kW : 2021 : Rosso metallizzato :  32.000 euro:
-BMW : Serie 2 Gran Coupé : Gasolio : 1.995 cm3 : 190 CV/140 kW : 2020 : Blu metallizzato :  41.500 euro:
-BMW : Serie 2 Gran Tourer : Benzina : 1.499 cm3 : 109 CV/80 kW  : 2019 : Bianco pastello :  28.900 euro:
-Citroën: C1 : Benzina : 998 cm3 : 72 CV/53 kW : 2020 : Nero metallizzato : 10.750 euro:
-Citroën: C3 : Benzina : 1.199 cm3 : 83 CV/61 kW : 2020 : Marrone metallizzato : 15.600 euro:
-Citroën: C3 : Gasolio : 1.499 cm3 : 102 CV/75 kW : 2020 : Arancio pastello : 18.100 euro:
-Citroën: C4 : Elettrica : 0 cm3 : 136 CV/100 kW : 2020 : Acquamarina metallizzato : 37.650 euro:
-Citroën: C4 SpaceTourer : Gasolio : 1.499 cm3 : 131 CV/96 kW : 2021 : Amaranto metallizzato : 29.100 euro:
-Dacia: Duster : Benzina : 999 cm3 : 101 CV/74 kW : 2019 : Bianco Pastello : 12.600 euro:
-Dacia: Duster : Gasolio : 1.461 cm3 : 116 CV/85 kW : 2020 : Bianco Pastello : 19.950 euro:
-Dacia: Duster : Gasolio : 1.461 cm3 : 116 CV/85 kW : 2020 : Bianco Pastello : 19.950 euro:
-Dacia: Logan MCV : GPL : 999 cm3 : 101 CV/74 kW : 2020 : Blu Pastello : 13.600 euro:
-Dacia: Sandero : Benzina : 999 cm3 : 91 CV/67 kW  : 2020 : Bianco pastello : 12.100 euro:
-Dacia: Sandero : Benzina : 999 cm3 : 91 CV/67 kW  : 2020 : Rosso pastello : 12.100 euro:
-Dacia: Sandero : GPL : 999 cm3 : 101 CV/74 kW  : 2020 : Bianco pastello : 12.600 euro:
-Dacia: Sandero : GPL : 999 cm3 : 101 CV/74 kW  : 2020 : Nero pastello : 12.600 euro:
-Fiat: 500 : Ibrida benzina : 999 cm3 : 69 CV/51 KW : 2019 : Bianco perla : 16.650 euro :
-Fiat: 500L : Gasolio : 1.248 cm3 : 95 CV/70 KW : 2020 : Bianco pastello : 21.150 euro:
-Fiat: 500X : Benzina : 1.332 cm3 : 150 CV/110 KW : 2020 : Rosso Pastello : 27.000 euro:
-Fiat: Panda 4x4 : Benzina : 875 cm3 : 85 CV/63 kW : 2021 : Giallo Pastello : 20.050 euro:
-Fiat: Panda : Ibrida benzina : 999 cm3 : 69 CV/51 kW : 2020 : Azzurro metallizzato : 17.400 euro:
-Fiat: Panda : Metano : 875 cm3 : 71 CV/52 kW : 2020 : Arancio Pastello : 18.650 euro:
-Fiat: Panda : Metano : 875 cm3 : 71 CV/52 kW : 2020 : Grigio Moda : 18.650 euro:
-Ford: EcoSport : Benzina : 1.000 cm3 : 125 CV/92 kW : 2020 : Grigio metallizzato : 22.500 euro:
-Ford: Fiesta : Ibrida benzina : 998 cm3 : 125 CV/92 kW : 2021 : Blu metallizzato : 21.150 euro:
-Ford: Focus : Benzina : 2.300 cm3 : 280 CV/206 kW : 2020 : Bianco glaciale : 38.950 euro:
-Ford: Kuga : Ibrida gasolio : 1.499 cm3 : 150 CV/110 kW : 2020 : Blu metallizzato : 32.000 euro:
-Ford: Mondeo : Gasolio : 1.997 cm3 : 190 CV/140 kW : 2020 : Grigio metallizzato : 39.050 euro:
-Honda: Civic : Benzina : 988 cm3 : 126 CV/93 kW : 2020 : Rosso Metallizzato : 23.700 euro:
-Honda: Jazz : Ibrida benzina : 1.498 cm3 : 109 CV/80 kW : 2020 : Bianco Pastello : 26.900 euro:
-Hyundai: Kona : Elettrica : 0 cm3 : 136 CV/100 kW : 2020 : Azzurro metallizzato : 38.300 euro:
-Hyundai: i10 : GPL : 998 cm3 : 65 CV/148 kW : 2021 : Arancio metallizzato : 16.500 euro:
-Hyundai: Tucson : Ibrida benzina : 1.598 cm3 : 230 CV/169 kW : 2021 : Grigio metallizzato : 39.550 euro:
-Jeep : Cherokee : Gasolio : 2.174 cm3 : 194 CV/143 kW : 2020 : Bianco Pastello : 45.500 euro:
-Jeep : Compass : Gasolio : 1.598 cm3 : 120 CV/88 kW : 2020 : Bianco Pastello : 31.250 euro:
-Jeep : Renegade : Benzina : 999 cm3 : 120 CV/88 kW : 2021 : Nero Pastello : 26.100 euro:
-Lancia : Ypsilon : Ibrida benzina : 999 cm3 : 70 CV/52 kW : 2020 : Rosso Pastello : 16.150 euro:
-Lancia : Ypsilon : Metano : 875 cm3 : 70 CV/51 kW : 2020 : Argento metallizzato : 17.950 euro:
-Lancia : Ypsilon : Metano : 875 cm3 : 70 CV/51 kW : 2020 : Oro Pastello : 19.250 euro:
-Nisssan : Juke : Benzina : 999 cm3 : 117 CV/86 kW : 2021 : Rosso metallizzato : 23.770 euro:
-Nisssan : Micra : Benzina : 999 cm3 : 117 CV/86 kW : 2020 : Arancio Pastello : 19.530 euro:
-Nisssan : Qashqai : Gasolio : 1.461 cm3 : 115 CV/85 kW : 2021 : Rosso metallizzato : 23.565 euro:
-Opel : Astra : Gasolio : 1.499 cm3 : 122 CV/90 kW : 2021 : Bianco Pastello : 25.800 euro:
-Opel : Corsa : Benzina : 1.199 cm3 : 75 CV/55 kW : 2020 : Rosso Pastello : 15.350 euro:
-Opel : Corsa : Elettrica : 0 cm3 : 136 CV/100 kW : 2021 : Grigio fumo : 32.900 euro:
-Opel : Crossland X : Benzina : 1.199 cm3 : 131 CV/96 kW : 2021 : Blu Pastello : 24.950 euro:
-Peugeot : 208 : Gasolio : 1.499 cm3 : 102 CV/75 kW : 2021 : Giallo Pastello : 18.350 euro:
-Peugeot : 2008 : Elettrica : 0 cm3 : 136 CV/100 kW : 2021 : Arancio metallizzato : 38.350 euro:
-Peugeot : 3008 : Gasolio : 1.499 cm3 : 131 CV/96 kW : 2020 : Blu metallizzato : 31.000 euro:
-Renault : Captur : GPL : 999 cm3 : 101 CV/74 kW : 2020 : Rosso metallizzato : 18.550 euro:
-Renault : Clio : Ibrida benzina : 1.598 cm3 : 140 CV/103 kW : 2020 : Caffè : 23.800 euro:
-Renault : Scénic : Benzina : 1.332 cm3 : 116 CV/85 kW : 2021 : Arancio metallizzato : 22.700 euro:
-Renault : Twingo : Benzina : 998 cm3 : 65 CV/48 kW : 2020 : Azzurro Pastello : 13.050 euro:
-Seat : Leon : Ibrida benzina : 1.498 cm3 : 150 CV/110 kW : 2021 : Nero metallizzato : 27.950 euro:
-Skoda : Fabia : Benzina : 999 cm3 : 60 CV/44 kW : 2020 : Bianco Pastello : 14.830 euro:
-Smart : ForTwo Coupé : Elettrica : 0 cm3 : 82 CV/60 kW : 2021 : Rosso Pastello : 25.026 euro:
-Suzuki : Swift : Ibrida benzina : 1.197 cm3 : 90 CV/66 kW : 2021 : Azzurro metallizzato : 17.290 euro:
-Toyota : Corolla : Ibrida benzina : 1.987 cm3 : 184 CV/135 kW : 2020 : Blu metallizzato : 27.950 euro:
-Toyota : Yaris : Benzina : 998 cm3 : 72CV /53 kW : 2020 : Bianco Pastello : 17.200 euro:
-Toyota : Yaris : Ibrida benzina : 1.490 cm3 : 111 CV/85 kW : 2021 : Blu metallizzato : 24.000 euro:
-Volkswagen : Golf : Metano : 1.498 cm3 : 131 CV/96 kW  : 2021 : Nero opaco : 32.500 euro:
-Volkswagen : Polo : Benzina : 1.984 cm3 : 200CV /147 kW : 2020 : Rosso Pastello : 27.900 euro:
-Volkswagen : T-Roc : Gasolio : 1.598 cm3 : 116 CV/85 kW: 2021 : Blu metallizzato : 28.650 euro:
-Volkswagen : Up! : Metano : 999 cm3 : 116 CV/85 kW : 2020 : Bianco Pastello : 17.000 euro:
-Volvo : V60 : Ibrida gasolio : 1.969 cm3 : 211 CV/155 kW : 2021 : Blu metallizzato : 46.500 euro
+73:ALFA ROMEO: GIULIA : BENZINA : 1.995 CM3 : 200 CV/147 KW : 2020 : BLU METALLIZZATO : 47.000 EURO:
+ALFA ROMEO : GIULIA : GASOLIO : 2.143 CM3 : 136 CV/100 KW : 2021 : BIANCO GLACIALE : 43.500 EURO:
+ALFA ROMEO : GIULIETTA : GASOLIO: 1.598 CM3 : 120 CV/88 KW : 2020 : ROSSO METALLIZZATO :  27.800 EURO:
+ALFA ROMEO : STELVIO : BENZINA : 1.995 CM3 : 201 CV/148 KW : 2020 : GRIGIO FUMO :  56.000 EURO:
+AUDI : A1 CITYCARVER : BENZINA : 999 CM3 : 116 CV/85 KW : 2021 : BLU METALLIZZATO :  29.000 EURO:
+AUDI : A1 SPORTBACK : BENZINA : 999 CM3 : 116 CV/85 KW : 2019 : BIANCO METALLIZZATO :  22.950 EURO:
+BMW : SERIE 1 : GASOLIO : 1.496 CM3 : 116 CV/85 KW : 2020 : BLU OLTREMARE :  33.500 EURO:
+BMW : SERIE 2 GRAN COUPÉ : BENZINA : 1,499 CM3 : 140 CV/103 KW : 2021 : ROSSO METALLIZZATO :  32.000 EURO:
+BMW : SERIE 2 GRAN COUPÉ : BENZINA : 1,499 CM3 : 140 CV/103 KW : 2021 : ROSSO METALLIZZATO :  32.000 EURO:
+BMW : SERIE 2 GRAN COUPÉ : GASOLIO : 1.995 CM3 : 190 CV/140 KW : 2020 : BLU METALLIZZATO :  41.500 EURO:
+BMW : SERIE 2 GRAN TOURER : BENZINA : 1.499 CM3 : 109 CV/80 KW  : 2019 : BIANCO PASTELLO :  28.900 EURO:
+CITROËN: C1 : BENZINA : 998 CM3 : 72 CV/53 KW : 2020 : NERO METALLIZZATO : 10.750 EURO:
+CITROËN: C3 : BENZINA : 1.199 CM3 : 83 CV/61 KW : 2020 : MARRONE METALLIZZATO : 15.600 EURO:
+CITROËN: C3 : GASOLIO : 1.499 CM3 : 102 CV/75 KW : 2020 : ARANCIO PASTELLO : 18.100 EURO:
+CITROËN: C4 : ELETTRICA : 0 CM3 : 136 CV/100 KW : 2020 : ACQUAMARINA METALLIZZATO : 37.650 EURO:
+CITROËN: C4 SPACETOURER : GASOLIO : 1.499 CM3 : 131 CV/96 KW : 2021 : AMARANTO METALLIZZATO : 29.100 EURO:
+DACIA: DUSTER : BENZINA : 999 CM3 : 101 CV/74 KW : 2019 : BIANCO PASTELLO : 12.600 EURO:
+DACIA: DUSTER : GASOLIO : 1.461 CM3 : 116 CV/85 KW : 2020 : BIANCO PASTELLO : 19.950 EURO:
+DACIA: DUSTER : GASOLIO : 1.461 CM3 : 116 CV/85 KW : 2020 : BIANCO PASTELLO : 19.950 EURO:
+DACIA: LOGAN MCV : GPL : 999 CM3 : 101 CV/74 KW : 2020 : BLU PASTELLO : 13.600 EURO:
+DACIA: SANDERO : BENZINA : 999 CM3 : 91 CV/67 KW  : 2020 : BIANCO PASTELLO : 12.100 EURO:
+DACIA: SANDERO : BENZINA : 999 CM3 : 91 CV/67 KW  : 2020 : ROSSO PASTELLO : 12.100 EURO:
+DACIA: SANDERO : GPL : 999 CM3 : 101 CV/74 KW  : 2020 : BIANCO PASTELLO : 12.600 EURO:
+DACIA: SANDERO : GPL : 999 CM3 : 101 CV/74 KW  : 2020 : NERO PASTELLO : 12.600 EURO:
+FIAT: 500 : IBRIDA BENZINA : 999 CM3 : 69 CV/51 KW : 2019 : BIANCO PERLA : 16.650 EURO :
+FIAT: 500L : GASOLIO : 1.248 CM3 : 95 CV/70 KW : 2020 : BIANCO PASTELLO : 21.150 EURO:
+FIAT: 500X : BENZINA : 1.332 CM3 : 150 CV/110 KW : 2020 : ROSSO PASTELLO : 27.000 EURO:
+FIAT: PANDA 4X4 : BENZINA : 875 CM3 : 85 CV/63 KW : 2021 : GIALLO PASTELLO : 20.050 EURO:
+FIAT: PANDA : IBRIDA BENZINA : 999 CM3 : 69 CV/51 KW : 2020 : AZZURRO METALLIZZATO : 17.400 EURO:
+FIAT: PANDA : METANO : 875 CM3 : 71 CV/52 KW : 2020 : ARANCIO PASTELLO : 18.650 EURO:
+FIAT: PANDA : METANO : 875 CM3 : 71 CV/52 KW : 2020 : GRIGIO MODA : 18.650 EURO:
+FORD: ECOSPORT : BENZINA : 1.000 CM3 : 125 CV/92 KW : 2020 : GRIGIO METALLIZZATO : 22.500 EURO:
+FORD: FIESTA : IBRIDA BENZINA : 998 CM3 : 125 CV/92 KW : 2021 : BLU METALLIZZATO : 21.150 EURO:
+FORD: FOCUS : BENZINA : 2.300 CM3 : 280 CV/206 KW : 2020 : BIANCO GLACIALE : 38.950 EURO:
+FORD: KUGA : IBRIDA GASOLIO : 1.499 CM3 : 150 CV/110 KW : 2020 : BLU METALLIZZATO : 32.000 EURO:
+FORD: MONDEO : GASOLIO : 1.997 CM3 : 190 CV/140 KW : 2020 : GRIGIO METALLIZZATO : 39.050 EURO:
+HONDA: CIVIC : BENZINA : 988 CM3 : 126 CV/93 KW : 2020 : ROSSO METALLIZZATO : 23.700 EURO:
+HONDA: JAZZ : IBRIDA BENZINA : 1.498 CM3 : 109 CV/80 KW : 2020 : BIANCO PASTELLO : 26.900 EURO:
+HYUNDAI: KONA : ELETTRICA : 0 CM3 : 136 CV/100 KW : 2020 : AZZURRO METALLIZZATO : 38.300 EURO:
+HYUNDAI: I10 : GPL : 998 CM3 : 65 CV/148 KW : 2021 : ARANCIO METALLIZZATO : 16.500 EURO:
+HYUNDAI: TUCSON : IBRIDA BENZINA : 1.598 CM3 : 230 CV/169 KW : 2021 : GRIGIO METALLIZZATO : 39.550 EURO:
+JEEP : CHEROKEE : GASOLIO : 2.174 CM3 : 194 CV/143 KW : 2020 : BIANCO PASTELLO : 45.500 EURO:
+JEEP : COMPASS : GASOLIO : 1.598 CM3 : 120 CV/88 KW : 2020 : BIANCO PASTELLO : 31.250 EURO:
+JEEP : RENEGADE : BENZINA : 999 CM3 : 120 CV/88 KW : 2021 : NERO PASTELLO : 26.100 EURO:
+LANCIA : YPSILON : IBRIDA BENZINA : 999 CM3 : 70 CV/52 KW : 2020 : ROSSO PASTELLO : 16.150 EURO:
+LANCIA : YPSILON : METANO : 875 CM3 : 70 CV/51 KW : 2020 : ARGENTO METALLIZZATO : 17.950 EURO:
+LANCIA : YPSILON : METANO : 875 CM3 : 70 CV/51 KW : 2020 : ORO PASTELLO : 19.250 EURO:
+NISSSAN : JUKE : BENZINA : 999 CM3 : 117 CV/86 KW : 2021 : ROSSO METALLIZZATO : 23.770 EURO:
+NISSSAN : MICRA : BENZINA : 999 CM3 : 117 CV/86 KW : 2020 : ARANCIO PASTELLO : 19.530 EURO:
+NISSSAN : QASHQAI : GASOLIO : 1.461 CM3 : 115 CV/85 KW : 2021 : ROSSO METALLIZZATO : 23.565 EURO:
+OPEL : ASTRA : GASOLIO : 1.499 CM3 : 122 CV/90 KW : 2021 : BIANCO PASTELLO : 25.800 EURO:
+OPEL : CORSA : BENZINA : 1.199 CM3 : 75 CV/55 KW : 2020 : ROSSO PASTELLO : 15.350 EURO:
+OPEL : CORSA : ELETTRICA : 0 CM3 : 136 CV/100 KW : 2021 : GRIGIO FUMO : 32.900 EURO:
+OPEL : CROSSLAND X : BENZINA : 1.199 CM3 : 131 CV/96 KW : 2021 : BLU PASTELLO : 24.950 EURO:
+PEUGEOT : 208 : GASOLIO : 1.499 CM3 : 102 CV/75 KW : 2021 : GIALLO PASTELLO : 18.350 EURO:
+PEUGEOT : 2008 : ELETTRICA : 0 CM3 : 136 CV/100 KW : 2021 : ARANCIO METALLIZZATO : 38.350 EURO:
+PEUGEOT : 3008 : GASOLIO : 1.499 CM3 : 131 CV/96 KW : 2020 : BLU METALLIZZATO : 31.000 EURO:
+RENAULT : CAPTUR : GPL : 999 CM3 : 101 CV/74 KW : 2020 : ROSSO METALLIZZATO : 18.550 EURO:
+RENAULT : CLIO : IBRIDA BENZINA : 1.598 CM3 : 140 CV/103 KW : 2020 : CAFFÈ : 23.800 EURO:
+RENAULT : SCÉNIC : BENZINA : 1.332 CM3 : 116 CV/85 KW : 2021 : ARANCIO METALLIZZATO : 22.700 EURO:
+RENAULT : TWINGO : BENZINA : 998 CM3 : 65 CV/48 KW : 2020 : AZZURRO PASTELLO : 13.050 EURO:
+SEAT : LEON : IBRIDA BENZINA : 1.498 CM3 : 150 CV/110 KW : 2021 : NERO METALLIZZATO : 27.950 EURO:
+SKODA : FABIA : BENZINA : 999 CM3 : 60 CV/44 KW : 2020 : BIANCO PASTELLO : 14.830 EURO:
+SMART : FORTWO COUPÉ : ELETTRICA : 0 CM3 : 82 CV/60 KW : 2021 : ROSSO PASTELLO : 25.026 EURO:
+SUZUKI : SWIFT : IBRIDA BENZINA : 1.197 CM3 : 90 CV/66 KW : 2021 : AZZURRO METALLIZZATO : 17.290 EURO:
+TOYOTA : COROLLA : IBRIDA BENZINA : 1.987 CM3 : 184 CV/135 KW : 2020 : BLU METALLIZZATO : 27.950 EURO:
+TOYOTA : YARIS : BENZINA : 998 CM3 : 72CV /53 KW : 2020 : BIANCO PASTELLO : 17.200 EURO:
+TOYOTA : YARIS : IBRIDA BENZINA : 1.490 CM3 : 111 CV/85 KW : 2021 : BLU METALLIZZATO : 24.000 EURO:
+VOLKSWAGEN : GOLF : METANO : 1.498 CM3 : 131 CV/96 KW  : 2021 : NERO OPACO : 32.500 EURO:
+VOLKSWAGEN : POLO : BENZINA : 1.984 CM3 : 200CV /147 KW : 2020 : ROSSO PASTELLO : 27.900 EURO:
+VOLKSWAGEN : T-ROC : GASOLIO : 1.598 CM3 : 116 CV/85 KW: 2021 : BLU METALLIZZATO : 28.650 EURO:
+VOLKSWAGEN : UP! : METANO : 999 CM3 : 116 CV/85 KW : 2020 : BIANCO PASTELLO : 17.000 EURO:
+VOLVO : V60 : IBRIDA GASOLIO : 1.969 CM3 : 211 CV/155 KW : 2021 : BLU METALLIZZATO : 46.500 EURO
