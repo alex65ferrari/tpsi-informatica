@@ -1,4 +1,4 @@
-# Progetto collaborativo su un programma gestionale di una concessionaria
+# Progetto collaborativo per la creazione un programma gestionale di una concessionaria
 
 Un’azienda di automobili deve gestire il proprio parco auto. Vende auto nuove ed usate. 
 Vende auto di diverse marche e diversi modelli, di diversi colori e di diverse motorizzazioni (cilindrata/potenza e carburante). Si rende necessario realizzare un software che possa far vedere quante auto sono in vendita attualmente, quante sono state vendute ed eventualmente filtrarle per una (o eventualmente più di una) delle caratteristiche.
