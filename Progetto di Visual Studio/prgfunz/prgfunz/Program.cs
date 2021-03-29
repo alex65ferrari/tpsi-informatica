@@ -477,7 +477,7 @@ namespace prgfunz
                     for (int i = 0; i < n; i++) //Chiede le caratteristiche delle auto da inseire.
                     {
                         Console.WriteLine("\nInserisci {0} dell'auto che vuoi inserire:", elementiVisualizzati[i]);
-                        nuovAutomobile[i] = Convert.ToString(Console.ReadLine());
+                        nuovAutomobile[i] = Convert.ToString(Console.ReadLine()).ToUpper();
                         while (nuovAutomobile[i] == "") //Esegue un controllo preventivo per evitare che i campi vengano lasciati vuoti.
                         {
                             Console.WriteLine("\nNon puoi lasciare vuoto un campo di inserimento. Inserisci {0} dell'auto che vuoi inserire:", elementiVisualizzati[i]);
@@ -976,7 +976,12 @@ namespace prgfunz
                         else if (i >= k && i <= (k + j))
                         {
                             Console.WriteLine("\nInserisci {0} dell'auto:", elementiVisualizzati[i]);
-                            nuovAutomobile[i] = Convert.ToString(" " + Console.ReadLine() + " ");
+                            nuovAutomobile[i] = Convert.ToString(" " + Console.ReadLine() + " ").ToUpper();
+                            while (nuovAutomobile[i] == "  ") //Esegue un controllo preventivo per evitare che i campi vengano lasciati vuoti.
+                            {
+                                Console.WriteLine("\nNon puoi lasciare vuoto un campo di inserimento. Inserisci {0} dell'auto:", elementiVisualizzati[i]);
+                                nuovAutomobile[i] = Convert.ToString(" " + Console.ReadLine() + " ").ToUpper();
+                            }
                         }
                     }
                 }
