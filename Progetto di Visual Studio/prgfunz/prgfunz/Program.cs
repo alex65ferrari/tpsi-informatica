@@ -31,19 +31,19 @@ namespace prgfunz
         static string[] elementiVisualizzati = new string[0]; //Verrà usata per contenere gli elementi da mostrare durante l'inserimento delle caratteristiche delle auto.
         static string[,] autoFunzione = new string[0, 0]; /*Verrà usata per contenere le auto in base alle scelte fatte (ad esempio se si indica "auto-in vendita-nuova" 
                                                              inserisce in questo array le auto nuove in vendita).*/
-        static string indicazioneCaratteristicheAuto = ""; //Verrà usata per indicare le caratteristiche che verranno visualizzate una volta terminata una funzione.
-        static int n = 0; //Indica generalemente il numero di colonne di array bidimensionali che contengono le auto.
-        static int righe = 0;//Indica il numero di righe di array bidimensionali che contengono le auto.
+        static string indicazioneCaratteristicheAuto; //Verrà usata per indicare le caratteristiche che verranno visualizzate una volta terminata una funzione.
+        static int n; //Indica generalemente il numero di colonne di array bidimensionali che contengono le auto.
+        static int righe;//Indica il numero di righe di array bidimensionali che contengono le auto.
         static char carattereDivisore = ':'; //Inizializza la variabile carattere che contiene l'elemento divisore del file.
         //vengono inizializzate tutte le variabili e gli array che servono nella funzione main, insieme alle altre
-        static string sceltaIniziale = "";  //Questa è la scelta indicata dall'utente inizialmente, per poter accedere alle varie funzioni del programma.
-        static string primaScelta = "";//Questa è la scelta indicata dall'utente fra auto in vendita e vendute.
-        static string secondaScelta = "";//Questa è la scelta indicata dall'utente fra auto nuove e usate.
-        static string primaScelta2 = ""; //Variabile necessaria nella funzione di spostamento (SpostaFile), che conterrà la "seconda" prima scelta fra auto in vendita e non.
-        static string secondaScelta2 = ""; //Variabile necessaria nella funzione di spostamento (SpostaFile), che conterrà la "seconda" seconda scelta fra auto nuove e usate.
+        static string sceltaIniziale;  //Questa è la scelta indicata dall'utente inizialmente, per poter accedere alle varie funzioni del programma.
+        static string primaScelta;//Questa è la scelta indicata dall'utente fra auto in vendita e vendute.
+        static string secondaScelta;//Questa è la scelta indicata dall'utente fra auto nuove e usate.
+        static string primaScelta2; //Variabile necessaria nella funzione di spostamento (SpostaFile), che conterrà la "seconda" prima scelta fra auto in vendita e non.
+        static string secondaScelta2; //Variabile necessaria nella funzione di spostamento (SpostaFile), che conterrà la "seconda" seconda scelta fra auto nuove e usate.
         //Inizializzazione di variabili booleane necessarie per effettuare verifiche all'interno del programma.
-        static bool verifica = true;
-        static bool verifica2 = true;
+        static bool verifica;
+        static bool verifica2;
         static char capo = '\n'; //Inizializza il valore del carattere capo, necessario per andare a capo oppure no.
         //Funzione principale di acquisizione del contenuto del file e richieste iniziali.
         public static void Main(string[] args)
@@ -56,11 +56,16 @@ namespace prgfunz
                 primaScelta = "";
                 secondaScelta = "";
                 secondaScelta2 = "";
+                n = 0;
+                righe = 0;
                 string autoNuoveInVenditaLettura = "0:::::::::"; //Inizializza la stringa che conterrà tutti i dati del file delle auto nuove in vendita.
                 string autoUsateInVenditaLettura = "0:::::::::::::"; //Inizializza la stringa che conterrà tutti i dati del file delle auto usate in vendita.
                 string autoNuoveVenduteLettura = "0:::::::::::::"; //Inizializza la stringa che conterrà tutti i dati del file delle auto nuove vendute.
                 string autoUsateVenduteLettura = "0::::::::::::::";//inizializza la stringa che conterrà tutti i dati del file delle auto usate vendute.
                 string istruzioni = ""; //Inizializza la stringa che conterrà le istruzioni del programma.
+                indicazioneCaratteristicheAuto = "";
+                verifica = true;
+                verifica2 = true;
                 Console.Clear(); //Pulisce il contenuto della console. 
                 //Alla prima riga viene dato allo sfondo il colore blu e il colore dei caratteri bianco.
                 Console.BackgroundColor = ConsoleColor.DarkBlue;
@@ -999,12 +1004,19 @@ namespace prgfunz
                 }
                 Console.WriteLine("\n\nSei sicuro di voler inserire questa nuova auto? Ricordati che verrà inserita nel nuovo elenco, poi verrà eliminata dal precedente.");
                 risposta2 = Convert.ToString(Console.ReadLine()).ToUpper();
-                ControlloRisposta(ref risposta2); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
-                verifica = true; //Viene posta uguale a true per poter accedere, in SceltaMatrici, alla selezione dei dati da inserire all'interno dell'array autoFunzione.
-                verifica2 = false; //Viene posto uguale a false per non ripetere il riferimento alla funzione di ricerca, alla funzione di eliminazione e spostamento.
-                SceltaMatrici(primaScelta2, secondaScelta2); //Si fa riferimento di nuovo a SceltaMatrici per disporre dell'array autoFunzione che conti
-                InserisciFile(primaScelta2, secondaScelta2, nuovAutomobile); //Si fa riferimento alla funzione InserisciFile per fare l'inserimento nel file vero e proprio.
-                verifica2 = true;//Per poter effettuare l'eliminazione è necessario che verifica2 sia true.
+                if (risposta2 == "NO")
+                {
+                    verifica2 = false;
+                }
+                else if (risposta2=="SI" || risposta2== "SÌ")
+                {
+                    ControlloRisposta(ref risposta2); //Richiama ControlloRisposta per eseguire un controllo preventivo nel caso in cui si inseriscano delle parole chiave non accettabili.
+                    verifica = true; //Viene posta uguale a true per poter accedere, in SceltaMatrici, alla selezione dei dati da inserire all'interno dell'array autoFunzione.
+                    verifica2 = false; //Viene posto uguale a false per non ripetere il riferimento alla funzione di ricerca, alla funzione di eliminazione e spostamento.
+                    SceltaMatrici(primaScelta2, secondaScelta2); //Si fa riferimento di nuovo a SceltaMatrici per disporre dell'array autoFunzione che conti
+                    InserisciFile(primaScelta2, secondaScelta2, nuovAutomobile); //Si fa riferimento alla funzione InserisciFile per fare l'inserimento nel file vero e proprio.
+                    verifica2 = true;//Per poter effettuare l'eliminazione è necessario che verifica2 sia true.
+                }
                 //Ritorna alla funzione EliminaFile.
             }
         }
