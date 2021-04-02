@@ -5,3 +5,7 @@ Vende auto di diverse marche e diversi modelli, di diversi colori e di diverse m
 
 Progetto di informatica e TPSIT. Programma creato da Diego Albertin, Francesco Di Lena, Alessio Donini, Alex Niccolò Ferrari, classe 3F,
 ITI "Ferruccio Viola", A.S. 2020-2021.
+
+# Videorelazione
+
+[link videorelazione](https://drive.google.com/file/d/1XLAKs-uQIO4giBiFTgU3GCm8B4jFxSjd/view)
