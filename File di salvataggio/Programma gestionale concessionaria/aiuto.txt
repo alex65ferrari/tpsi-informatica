@@ -1,0 +1,159 @@
+
+****************************       ISTRUZIONI PER L'UTILIZZO DEL PROGRAMMA GESTIONALE       ****************************
+
+Siete arrivati all'inizio delle istruzioni!
+
+                                                  PREMESSA
+
+
+Grazie per aver scelto il nostro software gestionale. Se Voi siete arrivati qui vuol dire che avete bisogno di aiuto per imparare ad utilizzare 
+le funzioni del programma: vedrete che imparare ad usarlo sarà molto più semplice di quello che credete.
+
+
+                                                PAGINA INIZIALE
+
+
+Il programma ha un interfaccia di tipo riga di comando in cui vengono inseriti i diversi parametri richiesti per la visualizzazione 
+dell’elenco. All’inizio il programma si apre con una breve schermata introduttiva che esplica alcune funzionalità del programma stesso, indica
+la data del giorno corrente.Al primo avvio del programma, oppure in ogni caso in cui non riuscisse a trovare i file delle auto, viene visualizzato
+un messaggio di errore: la cartella e i file che contengono le auto non sono presenti all’interno del disco rigido, per cui è necessario crearli.
+Potete decidere di crearli inserendo la parola chiave “SÌ”, oppure può saltare la creazione inserendo “NO”: quest’ultima opzione è stata 
+decisa perché si può chiudere il programma e reinserire i file manualmente per utilizzarli in un successivo funzionamento del programma. 
+Nel caso in cui, invece, la cartella sia stata creata ma i file no, le richieste di creazione dei file sono
+quattro: una per creare il file con le auto nuove in vendita, il secondo le auto usate in vendita, il terzo le auto nuove vendute, 
+il quarto le auto usate vendute. Una volta effettuata la creazione della cartella e dei file, se necessario, il programma effettua 
+la sua prima vera richiesta: si vuole fare una ricerca fra le auto, inserirne, eliminarne o spostarne una. Potete decidere inserendo 
+le parole chiave che corrispondono al nome della funzione: “RICERCA”, “INSERISCI”, “ELIMINA”, oppure “SPOSTA”.
+
+
+                                               FUNZIONE DI RICERCA
+
+
+Una volta inserita l’apposita parola chiave, si accede alla funzione ricerca. Questo tipo di funzione, insieme a quella di spostamento e 
+eliminazione, può essere svolta solamente in caso in cui i file contengano delle auto, altrimenti viene visualizzato un messaggio di errore. 
+La prima richiesta è quella se si vuole accedere alle auto in vendita o vendute: la scelta è obbligata e può avvenire inserendo 
+rispettivamente le parole chiave “VENDITA” oppure “VENDUTA”. 
+La seconda richiesta, poi, riguarda le auto nuove o usate, dove le possibilità di scelta sono tre: la parola chiave può essere “NUOVA”, 
+“USATA”. Dopo queste prime richieste si possono presentare due scenari: se non ci sono auto del tipo scelto allora la ricerca si blocca e 
+dà un messaggio di errore, invitandovi ad usare la funzione di inserimento di una nuova auto prima di eseguire la ricerca; se ci sono delle auto 
+presenti nei file, allora comincia a chiedere le caratteristiche delle auto, a partire dalla marca, poi tutte le altre caratteristiche, che variano 
+in base al tipo di auto che si vuole ricercare. L’inserimento di tutte le caratteristiche non è necessario: infatti, se si vuole saltare una o più 
+caratteristiche, senza però terminare la richiesta, basta non inserire nulla e premere invio; nel caso, invece, in cui si voglia terminare 
+la ricerca ad una certa caratteristica, si preme invio per arrivare a quella successiva e poi, in quest’ultima, si inserisce la tripla barra “///”;
+se si inserisce la tripla barra alla prima caratteristica (la marca) viene visualizzato l’elenco completo delle auto appartenenti alla categoria 
+scelta inizialmente.  
+Una volta terminata la richiesta di filtri per la ricerca, mostra i risultati: qui si possono presentare due casi. Il primo è quello in cui non è 
+stato trovato nulla, quindi il programma vi invita a ripetere la ricerca con parametri diversi, mentre nel secondo caso la ricerca mostra 
+dei risultati: innanzitutto mostra quanti risultati sono stati ottenuti, poi mostra quali caratteristiche, in serie, saranno visualizzate in base 
+al tipo di auto ricercata e, infine, mostra le auto, in ordine numerato e alfabetico. Potete visionare quindi le varie caratteristiche 
+delle auto, e, dopo che è stato raggiunto questo obbiettivo, potete decidere se compiere altre azioni oppure no: il programma chiede se lo si vuole 
+riavviare per eseguire ulteriori operazioni (che possono essere sempre ricerca, oppure delle altre) oppure se lo si vuole chiudere. 
+Se voi a questa richiesta scegliete “SÌ”, allora il programma viene riportato alla schermata iniziale, altrimenti, se volete 
+inserire “NO”, il programma si chiude automaticamente.
+
+
+                                              FUNZIONE DI INSERIMENTO
+
+
+La seconda funzione utilizzabile è l’inserimento, accessibile attraverso l’omonima parola chiave. Essa consiste nell’inserire all’interno dei 
+file una nuova auto, quindi, a differenza delle altre funzioni, questa può essere eseguita anche nel caso in cui i file non contenessero auto. 
+Le prima richiesta, come avviene nella ricerca, è di scegliere se si vuole inserire un’auto in vendita o venduta, così come la seconda, in cui 
+la decisione avviene tra nuova e usata; poi avviene la richiesta di tutte le caratteristiche dell’auto che si deve inserire in base alle prime 
+due scelte: qui però, a differenza della ricerca, l’inserimento delle caratteristiche è obbligatorio, quindi se si lasciano spazi vuoti il 
+programma darà errore. Una volta terminato l’inserimento da tastiera di tutte le caratteristiche della macchina, il programma le riepiloga automaticamente, 
+in modo che voi possiate accorgervi di eventuali errori di inserimento, e chiede se si vuole procedere con il salvataggio delle modifiche: se non ci 
+sono errori e decidete di farlo, inserite “SÌ” alla richiesta e il programma visualizza “Salvataggio in corso...”, invitandovi a non chiudere il 
+programma per evitare di perdere i dati, e poi, se non ci sono stati problemi, visualizza “Salvataggio completato con successo”. Nel caso in cui ci siano 
+dei problemi, però, visualizza un messaggio di errore: esegue dei nuovi tentativi (al massimo 3), ma se ancora non riesce vi invita a chiudere 
+e riavviare il programma, oppure a contattare l’amministratore in caso di problemi di autorizzazione.
+Ritornando comunque alla scelta se salvare o meno, se voi inseriste “NO” alla richiesta , allora il programma chiede anche qui se volete riavviare 
+il programma oppure no: questo quesito viene posto anche al termine del salvataggio, ma in modo particolare se voi non voleste salvare, 
+allora potrebbe ripetere l’inserimento dopo essere ritornato alla schermata iniziale, oppure passare ad un’altra funzione, oppure, ancora, chiudere il programma.
+
+
+                                               FUNZIONE DI ELIMINAZIONE
+
+
+Alla funzione di eliminazione di può accedere con l’apposita parola chiave e consiste nell’eliminare definitivamente un’automobile da un certo file, 
+in base al tipo di auto che viene selezionata. Dal punto di vista puramente funzionale essa è in realtà costituita da due funzioni: dalla ricerca 
+e dall’eliminazione stessa. La prima parte, quindi, funziona come la ricerca: si inseriscono le caratteristiche obbligatorie, quali la vendita/venduta e 
+nuova/usata, e, se si vuole, si inseriscono le altre caratteristiche delle auto. Una volta mostrati i risultati della ricerca, quindi con l’elenco 
+numerato, il programma chiede di inserire il numero corrispondente all’auto che si desidera eliminare: potete inserire solamente i numeri che sono 
+presenti all’interno dell’elenco, altrimenti il programma dà un messaggio di errore e chiede di nuovo l’inserimento di un parametro corretto. 
+Una volta inserito il numero e premuto invio, il programma, come avviene nell’inserimento, mostra di nuovo le caratteristiche
+dell’auto che si è scelta, in modo che voi possiate verificare se ha fatto la scelta giusta. Anche qui se la scelta è “SÌ”, 
+allora il programma prosegue con la vera eliminazione, con la quale avviene salvataggio delle modiche e se ci sono degli errori lo segnala, 
+altrimenti se il salvataggio è terminato, oppure se la scelta è stata “NO” chiede se si vuole proseguire con un riavvio del programma, 
+oppure una chiusura.
+
+
+                                                FUNZIONE DI SPOSTAMENTO
+
+
+Con la parola “SPOSTA” si accede allo spostamento, funzione, anche questa, costituita da più funzioni che lavorano insieme:
+ricerca, spostamento stesso, inserimento ed eliminazione.  Essa consiste nell’eliminare una macchina che si trova all’interno
+di un file, per inserirla all’interno di un file diverso, quindi spostandola,per esempio, da in vendita nuova a venduta nuova.
+Le prime richieste da parte del programma sono quelle della ricerca, poi, una volta visualizzato l’elenco numerato, potete
+decidere quale auto vuole spostare inserendo il numero, poi la richiesta è sempre se è sicuro di voler spostare l’auto inserita 
+con il numero: se la risposta è “SÌ”,allora il programma inizia a richiedere dove si vuole trasferire l’auto. Si chiede sempre
+se si vuole spostare a vendita/venduta e a nuova/usata, sempre utilizzando le parole chiave “VENDITA”/”VENDUTA” e “NUOVA”/”USATA”.
+Si possono presentare tre casi. Il primo è quando voi decidete di spostare l’auto nello stesso elenco di provenienza:
+ovviamente non è uno spostamento possibile, quindi il software mostra un messaggio di errore. 
+Il secondo caso è quando voi inserite uno spostamento che è possibile ma che deve avvenire da un elenco con meno informazioni
+a uno che ne ha di più, come da in vendita nuova a venduta nuova: si rende necessario quindi l’inserimento delle caratteristiche mancanti, 
+quindi il programma richiede l’inserimento delle caratteristiche mancanti. Il terzo caso, infine, avviene quando lo spostamento è valido
+e deve avvenire da un elenco più grande ad uno più piccolo: in questo caso bisogna eliminare le informazioni che non sono più necessarie,
+operazione a cui provvede in automatico il software.
+Negli ultimi due casi, se tutte le operazioni vengono compiute, il programma mostra di nuovo l’auto con le nuove caratteristiche inserite 
+o eliminate e chiede se si vuole procedere al salvataggio: se voi inseriste “SÌ", allora avviene prima l’inserimento dell’auto con 
+le nuove informazioni all’interno del file in cui si è deciso di inserirla, poi esegue l’eliminazione nel file dove si trovava prima. 
+Anche qui nel caso in cui ci siano errori vi vengono segnalati durante l’esecuzione di entrambe le fasi di salvataggio.
+Se, ritornando al primo caso spiegato prima in cui lo spostamento da voi inserito non sia valido, oppure se voi
+decideste di non salvare le modifiche,il software vi chiede se desiderate riavviare il programma per eseguire ulteriori
+operazioni, oppure chiuderlo.
+
+
+                                                ELENCO DELLE PAROLE CHIAVE
+
+
+SÌ: risposta utilizzata in varie richieste, come nelle richieste delle eccezioni, oppure alla fine del programma.
+NO: risposta utilizzata in varie richieste, come nelle richieste delle eccezioni, oppure alla fine del programma.
+RICERCA: utilizzabile nella scelta iniziale per accedere alla funzione di ricerca.
+INSERISCI: utilizzabile nella scelta iniziale per accedere alla funzione di inserimento.
+ELIMINA: utilizzabile nella scelta iniziale per accedere alla funzione di eliminazione.
+SPOSTA: utilizzabile nella scelta iniziale per accedere alla funzione di spostamento.
+AIUTO: utilizzabile nella scelta iniziale per accedere alla funzione di aiuto.
+HELP: parametro alternativo utilizzabile nella scelta iniziale per accedere alla funzione di aiuto.
+? : parametro alternativo utilizzabile nella scelta iniziale per accedere alla funzione di aiuto.
+VENDITA: utilizzabile per accedere alle auto in vendita nella funzione di ricerca, inserimento, eliminazione
+e in quella di spostamento.
+VENDUTA: utilizzabile per accedere alle auto vendute nella funzione di ricerca, inserimento, eliminazione e 
+in quella di spostamento.
+NUOVA: utilizzabile per accedere alle auto nuove nella funzione di ricerca, inserimento, eliminazione e in quella
+di spostamento.
+USATA: utilizzabile per accedere alle auto usate nella funzione di ricerca, inserimento, eliminazione e in quella 
+di spostamento.
+Numeri 1,2,3,4,… : numeri da inserire nella funzione di eliminazione e spostamento, che variano in base alle auto 
+presenti nei file selezionati.
+Caratteristiche delle auto:  sono le diverse caratteristiche che riguardano un’auto e possono essere inserite nelle 
+funzioni di ricerca, inserimento, eliminazione e spostamento.
+
+
+                                                          CONCLUSIONI
+
+
+Speriamo che questo manuale di istruzioni sia stato utile per farvi comprendere meglio il funzionamento del programma
+e che possa aiutarvi a rendere efficiente il vostro lavoro. Nel caso in cui ci fossero dei problemi, comunque, contatteci 
+pure. Per cominciare a lavorare con il programma inserire "Sì" alla prossima richiesta e premere invio.
+
+
+*********************          Per leggere l'inizio del manuale torna su con la rotella del mouse,          *********************
+*********************                   oppure con la barra di scorrimento laterale.                        *********************
+
+
+
+*********************                                         v 1.0                                         *********************
+                               Programma realizzato da Diego Albertin, Francesco Di Lena, Alessio Donini    
+*********************                  e Alex Niccolò Ferrari. Classe terza F. A.S. 2020-2021.              *********************
+
+
